@@ -24,9 +24,9 @@ Simple page with website structure.
 
 If you need support or if you want to ask something, go to my [contact](https://www.kalwaltart.com/contacts/) page
 
-## www.kalwaltart.it
+## www.kalwaltart.com
 
-This repository contains the source code and content for the www.kalwaltart.it website.
+This repository contains the source code and content for the www.kalwaltart.com website.
 
 ## Licenses
 
