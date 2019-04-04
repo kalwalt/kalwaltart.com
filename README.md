@@ -3,25 +3,26 @@ layout: default
 title: Readme page of Kalwalt website
 description: Simple Readme.md page with website structure to offer a simple description of the portal.
 ---
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9ffe85a1-5bcc-4286-ae8c-0dd9a5b7d8c1/deploy-status)](https://app.netlify.com/sites/kalwaltart/deploys)
+## Introduction
+This site it will became my international version of **www.kalwaltart.it** >> **www.kalwaltart.com**
 
 ## Welcome to my website
 Simple page with website structure.
 
 ### Website structure
 
-[Home](https://www.kalwaltart.it/)
-[Artworks](https://www.kalwaltart.it/artworks/)
-[Interactivity](https://www.kalwaltart.it/interactivity/)
-[CV](https://www.kalwaltart.it/cv/)
-[Blog](https://www.kalwaltart.it/blog/)
-[About](https://www.kalwaltart.it/about/)
-[Contact me](https://www.kalwaltart.it/contacts/)
+[Home](https://www.kalwaltart.com/)
+[Artworks](https://www.kalwaltart.com/artworks/)
+[Interactivity](https://www.kalwaltart.com/interactivity/)
+[CV](https://www.kalwaltart.com/cv/)
+[Blog](https://www.kalwaltart.com/blog/)
+[About](https://www.kalwaltart.com/about/)
+[Contact me](https://www.kalwaltart.com/contacts/)
 
 
 ### Support or Contact
 
-If you need support or if you want to ask something, go to my [contact](https://www.kalwaltart.it/contacts/) page
+If you need support or if you want to ask something, go to my [contact](https://www.kalwaltart.com/contacts/) page
 
 ## www.kalwaltart.it
 
@@ -31,7 +32,7 @@ This repository contains the source code and content for the www.kalwaltart.it w
 
 ### Post and Page Content
 
-The post and page content - articles and all the images - in this repository is under copyright and is not available under any Creative Commons license. For usage permission, please raise a GitHub issue on this repository or [contact me](https://www.kalwaltart.it/contacts/).
+The post and page content - articles and all the images - in this repository is under copyright and is not available under any Creative Commons license. For usage permission, please raise a GitHub issue on this repository or [contact me](https://www.kalwaltart.com/contacts/).
 
 ## Code
 The code in this repository is licensed under The MIT License.
