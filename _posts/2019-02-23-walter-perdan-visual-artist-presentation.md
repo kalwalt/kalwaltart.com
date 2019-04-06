@@ -13,10 +13,7 @@ seo:
   type: BlogPosting
 image: 'https://ucarecdn.com/a73d8cda-4bb1-4541-a558-3c473d3fab9f/my_presentation_walter_perdan_artist.jpg'
 intro_paragraph: >-
-  A little presentation: I am a visual artist working on different fields from
-  Interactive art, painting, sculpture... check
-  [www.kalwaltart.it](https://www.kalwaltart.it) or
-  [www.walterperdan.com](https://www.walterperdan.com) for more.
+  A little presentation: I am a visual artist working on different fields from Interactive art, painting, sculpture... check [www.kalwaltart.it](https://www.kalwaltart.it) or [www.walterperdan.com](https://www.walterperdan.com) for more...
 categories: Interactive-art
 tags: AR Interactive-art 2019
 ---

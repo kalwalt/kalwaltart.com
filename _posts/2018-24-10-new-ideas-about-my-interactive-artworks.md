@@ -10,7 +10,7 @@ seo:
   datePublished: date
 image: 'https://ucarecdn.com/1255ace3-6fe7-4579-a9df-4545c59b3333/Art_Is_a_joke_interactive_slice.jpg'
 intro_paragraph: >-
-  Ideas and future plans for the development of interactive artworks for Augmented Reality.
+  Ideas and future plans for the development of interactive artworks for Augmented Reality. How to develop interactive works...
 categories: Interactive-art Art
 tags: Interactive-art AR 2018
 ---
