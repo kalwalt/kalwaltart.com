@@ -2,8 +2,7 @@
 layout: post
 title: Interactive art improvements and news
 description: >-
-  Some news on interactive art, web design and programming related to my
-  websites and my works, article by kalwalt alias Walter Perdan.
+  Some news on interactive art, web design and programming related to my websites and my works, article by kalwalt alias Walter Perdan.
 author: Walter Perdan
 date: '2019-02-20 14:02:55'
 lang: en
@@ -12,7 +11,8 @@ seo:
   datePublished: '2019-02-20'
   type: BlogPosting
 image: 'https://ucarecdn.com/20796a85-7afc-4634-8e87-f66201205163/Art_is_a_joke_abstract_painting_augmented_reality_interactive_kalwalt.jpg'
-intro_paragraph: 'Some news related to interactive art, web design and programming world.'
+intro_paragraph: >-
+  Some news related to interactive art, web design and programming world. Using the jekyll-responsive-image plugin...
 categories: Interactive-art
 tags: Interactive-art AR Artoolitx NFT Gatsbyjs React Uploadcare 2019
 ---

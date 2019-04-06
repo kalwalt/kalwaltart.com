@@ -8,10 +8,11 @@ section: artworks
 image: 'https://ucarecdn.com/20796a85-7afc-4634-8e87-f66201205163/Art_is_a_joke_abstract_painting_augmented_reality_interactive_kalwalt.jpg'
 description: "Some Kalwalt's alias Walter Perdan Artworks. His works is mainly focused on abstract art. For an exaustive list of artworks go to the attached link."
 lang: en
-intro_paragraph: '## Introduction
+intro_paragraph: >-
+  ## Introduction
 
   In this page briefly i will introduce you to my artistic research and i will explain some fields in which i like to express with. It does not want to be an exhaustive explanation but rather a quick review of my main fields of expression.
-  For a deeper understanding of my artworks and a better fruition of them, i suggest a visit to my official artistic website.'
+  For a deeper understanding of my artworks and a better fruition of them, i suggest a visit to my official artistic website.
 ---
 ## Painting
 

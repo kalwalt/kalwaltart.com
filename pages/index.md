@@ -7,7 +7,7 @@ permalink: /
 section: home
 description: Original website of Kalwalt alias Walter Perdan. In this website are stored all my augmented reality applications for interactive art.
 lang: en
-google_site_verification: j0ERzKxg-XSHmYaPullKXtZYYqOssFy-_e2SEjgpyhU
+google_site_verification: ""
 intro_paragraph: ''
 ---
 

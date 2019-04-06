@@ -13,8 +13,7 @@ seo:
   type: BlogPosting
 image: 'https://ucarecdn.com/c4ac6055-1edb-44de-af97-5e7363814ee4/cubist_dragon.jpg'
 intro_paragraph: >-
-  As promised in my post some time ago, I release for free my project created
-  with Artivive. More information below.
+  As promised in my post some time ago, I release for free my project created with Artivive. More information below...
 categories: Interactive-art
 tags: Interactive-art AR Artivive Kaleidastudio 2019
 ---
