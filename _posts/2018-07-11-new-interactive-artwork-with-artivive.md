@@ -9,7 +9,8 @@ seo:
   author: Walter Perdan
   datePublished: date
 image: 'https://ucarecdn.com/cb9f79fd-d999-4ddd-8532-4655bcc3d756/suono_di_superficie_artivive_acrylic_painting_interactive_art_Walter_Perdan.jpg'
-intro_paragraph: I describe my artwork "Suono di superficie", made with Artivive technology for Augmented Reality
+intro_paragraph: >-
+  I describe my artwork "Suono di superficie", made with Artivive technology for Augmented Reality
 categories: Interactive-art Art
 tags: Interactive-art Artivive AR Glitch Animation 2018
 ---

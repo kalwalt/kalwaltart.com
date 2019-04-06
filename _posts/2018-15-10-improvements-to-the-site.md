@@ -9,7 +9,8 @@ seo:
   author: Walter Perdan
   datePublished: date
 image: 'https://ucarecdn.com/b3d69125-251f-4203-a8ce-0f00e2c7d7de/Eterno_dilemma_abstract_painting_kalwalt.jpg'
-intro_paragraph: "News about my Website and the changes made. Why I'm using AMP technology..."
+intro_paragraph: >-
+  News about my Website and the changes made. Why I'm using AMP technology...
 categories: Interactive-art Art
 tags: AMP Web-design 2018
 ---

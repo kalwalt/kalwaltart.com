@@ -10,7 +10,8 @@ seo:
   author: Walter Perdan
   datePublished: date
 image: 'https://ucarecdn.com/44f9a356-38cc-4aa7-8732-8812a6548cfc/Noise_abstract_painting_augmented_reality_Walter_Perdan.jpg'
-intro_paragraph: I present the open call at Kaleida studio with Artivive technology. It is an international show for Augmented Reality.
+intro_paragraph: >-
+  I present the open call at Kaleida studio with Artivive technology. It is an international show for Augmented Reality.
 categories: Interactive-art
 tags: Interactive-art AR Artivive Kaleidastudio 2018
 ---

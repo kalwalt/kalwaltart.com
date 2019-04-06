@@ -10,7 +10,8 @@ seo:
   author: Walter Perdan
   datePublished: date
 image: 'https://ucarecdn.com/44f9a356-38cc-4aa7-8732-8812a6548cfc/Noise_abstract_painting_augmented_reality_Walter_Perdan.jpg'
-intro_paragraph: 'I switched my website to Netlify services: read the article to know the benefits.'
+intro_paragraph: >-
+  I switched my website to Netlify services: read the article to know the benefits.
 categories: Web-design
 tags: Netlify Web-design 2019
 ---
