@@ -1,11 +1,11 @@
-<div class="">
+<div class="switcher">
   <a href="{{ site.url }}{{ page.url }}">
     <p>English</p>
   </a>
+  {% if page.idx %}
   {% assign id = page.idx %}
-  {{ id }}
   <a href="{{ site.url_it }}/{{ site.data.articleTree[id].name }}">
+      {% endif %}
     <p>Italiano</p>
-
   </a>
 </div>
