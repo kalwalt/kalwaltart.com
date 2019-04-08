@@ -1,6 +1,6 @@
 ---
 layout: home
-id: 01
+idx: 00
 title: Interactive art | Kalwalt official website for AR apps
 crumbtitle: Home
 permalink: /

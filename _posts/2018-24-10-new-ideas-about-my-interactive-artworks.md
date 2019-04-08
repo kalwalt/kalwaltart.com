@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 12
 title: "Interactive art, some new ideas about development of my interactive artworks by Walter Perdan"
 description: "In this article i try to express some new ideas for developing new artworks of interactive art. Read more in the written text."
 date: 2018-10-24

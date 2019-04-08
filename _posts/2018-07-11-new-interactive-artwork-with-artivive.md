@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Artivive Interactive art| New interactive artwork with an emerging technology by Walter Perdan"
+idx: 08
+title: "Artivive Interactive art | New interactive artwork with an emerging technology by Walter Perdan"
 description: "In this article i describe my experience and new artwork 'Suono di superifcie' (En: Sound surface) made with Artivive technology. This is an emerging technology for augmented reality."
 date: 2018-11-07
 lang: en

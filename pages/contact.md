@@ -1,6 +1,6 @@
 ---
 layout: contact
-id: 07
+idx: 06
 title: Contacts
 crumbtitle: Contacts
 permalink: /contacts/

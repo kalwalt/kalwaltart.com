@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 15
 title: Artivive - Cubist dragon my free interactive artwork
 description: >-
   I released my Artivive augmented reality project "Cubist dragon" for free.

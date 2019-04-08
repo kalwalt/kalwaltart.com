@@ -1,6 +1,6 @@
 ---
 layout: page
-id: 04
+idx: 03
 title: Cv by Walter Perdan, visual artist.
 crumbtitle: Cv
 permalink: /cv/
