@@ -27,6 +27,6 @@ In this period i worked a lot on the this Gatsbyjs template: [gatsby-starter-i18
 
 `/en/artworks/` you can point to a page `/it/opere/ `(note the difference) 
 
-I have to add the Netlify CMS, so it will require a bit of time to finish....
+I have yet to add the Netlify CMS, so it will require a bit of time to finish....
 
 I did not so much art in this period, because i was involved in a bio-agricolture course, this was very important for me, I think it will change my direction in doing things in someway. My interest in ecology and sustanaibility grow in this sense, and it will reflect in the future of my choices and my art.
