@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 16
 title: Interactive art improvements and news
 description: >-
   Some news on interactive art, web design and programming related to my websites and my works, article by kalwalt alias Walter Perdan.

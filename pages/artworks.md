@@ -1,6 +1,6 @@
 ---
 layout: page
-id: 02
+idx: 01
 title: Abstract art | Artworks about Kalwalt alias Walter Perdan visual artist.
 crumbtitle: Artworks
 permalink: /artworks/
