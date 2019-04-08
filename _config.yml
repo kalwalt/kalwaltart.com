@@ -40,9 +40,9 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
-google_site_verification: ""
+google_site_verification: "AskPNDps4gxdrnpyY3aiqwB70G8lC4MrQAUJd0jpmwM"
 baseurl: ""
-url: https://www.kalwaltart.it
+url: https://www.kalwaltart.com
 # Permalink format (/blog/ is ignored for pages)
 permalink: /blog/:year/:month/:day/:title/
 
