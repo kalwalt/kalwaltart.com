@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 17
 title: Walter Perdan visual artist | presentation
 description: >-
   A little presentation: I am a visual artist working on different fields, check

@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 09
 title: "Some Improvements to the site by Walter Perdan | Kalwalt"
 description: "Some news about my site and future development, migrating hosting and other stuff. Switch to AMP and new plans for the future of www.kalwaltart.it Walter perdan old website."
 date: 2018-10-15

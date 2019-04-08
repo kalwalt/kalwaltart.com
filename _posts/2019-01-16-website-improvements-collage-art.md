@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 14
 title: Improvement to the website and collage art
 description: >-
   I added some new functionality to the website: jekyll-responsive-image plugin

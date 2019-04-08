@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 11
 title: "Augmented reality show | Upcoming projects by Walter Perdan"
 description: "In this article i present the open call at Kaleida studio for projects with Artivive technology. The project aim to present artworks from selected artists working with augmented reality."
 date: 2018-11-23
