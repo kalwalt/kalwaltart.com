@@ -8,7 +8,7 @@ seo:
   type: BlogPosting
   author: Walter Perdan
   datePublished: date
-image: 'https://ucarecdn.com/1255ace3-6fe7-4579-a9df-4545c59b3333/Art_Is_a_joke_interactive_slice.jpg'
+image: 'https://ucarecdn.com/5e541b7f-4561-45b6-9a10-dc432fb350e4/Art_is_a_joke_abstract_painting_augmented_reality_interactive_kalwalt.jpg'
 intro_paragraph: >-
   My last project with Artivive technology. Project initially developed for Kaleida studio open call. My plans for this.
 categories: Interactive-art
