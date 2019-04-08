@@ -23,12 +23,12 @@ tags: Interactive-art Jekyll Gatsbyjs Bulma 2019
 
 I decided to transform my www.kalwaltart.it website to a exclusively italian site, and make the .com extension only for the english people. I think that for a user is better because may choose the right language, and for italian people may choose the own language. The website is always based on jekyll as for [www.kalwaltart.it](www.kalwaltart.it)  that is the exact copy. 
 
-In this period i worked a lot on the this Gatsbyjs template: [gatsby-starter-i18n-bulma](https://github.com/kalwalt/gatsby-starter-i18n-bulma): I am developing this template for my new version of the www.walterpedan.com website. It is not finished but i am arrived at a good point. It is based on Gatsbyjs for javascript and Bulma for the css. It consent to switch between pages with different basenames, instead of the standard i18n plugin features. that allow only to switch between langs. That is, if you have a page:
+In this period i worked a lot on the this Gatsbyjs template: [gatsby-starter-i18n-bulma](https://github.com/kalwalt/gatsby-starter-i18n-bulma): I am developing this template for my new version of the [www.walterpedan.com](www.walterperdan.com) website. It is not finished but i am arrived at a good point. It is based on Gatsbyjs for javascript and Bulma for the css. It consent to switch between pages with different basenames, instead of the standard i18n plugin features. that allow only to switch between langs. That is, if you have a page:
 
-`/en/artworks/` you can point to a page `/it/opere/ `(note the difference) 
+`/en/artworks/` you can point to a page `/it/opere/` (note the difference) 
 
 I have yet to add the Netlify CMS, so it will require a bit of time to finish....
 
-I did not so much art in this period, because i was involved in a bio-agricolture course, this was very important for me, I think it will change my direction in doing things in someway. My interest in ecology and sustanaibility grow in this sense, and it will reflect in the future of my choices and my art.
+I did not so much art in this period, because i was involved in a bio-agricolture course, this was very important for me. I think it will change my direction in doing things in someway. My interest in ecology and sustanaibility grow in this sense, and it will reflect in the future of my choices and my art.
 
 I hope that you find useful this information and news. I wish you a good visit of my site and see you at the next blog!
