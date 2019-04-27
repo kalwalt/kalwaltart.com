@@ -1,40 +1,144 @@
 ---
 layout: interactivity
-title: FloW-er PoW-er
+title: Noise Noise
 meta-name: false
 ---
+<script id="vertexShader" type="x-shader/x-vertex">
+			precision mediump float;
+			precision mediump int;
+			uniform mat4 modelViewMatrix; // optional
+			uniform mat4 projectionMatrix; // optional
+			attribute vec3 position;
+			attribute vec4 color;
+			varying vec3 vPosition;
+			varying vec4 vColor;
+			void main()	{
+				vPosition = position;
+				vColor = color;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+
+		<script id="fragmentShader" type="x-shader/x-fragment">
+			precision mediump float;
+			precision mediump int;
+			uniform float time;
+			varying vec3 vPosition;
+			varying vec4 vColor;
+      // Some useful functions
+      vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+      //
+      // Description : GLSL 2D simplex noise function
+      //      Author : Ian McEwan, Ashima Arts
+      //  Maintainer : ijm
+      //     Lastmod : 20110822 (ijm)
+      //     License :
+      //  Copyright (C) 2011 Ashima Arts. All rights reserved.
+      //  Distributed under the MIT License. See LICENSE file.
+      //  https://github.com/ashima/webgl-noise
+      //
+      float snoise(vec2 v) {
+
+      // Precompute values for skewed triangular grid
+      const vec4 C = vec4(0.211324865405187,
+                          // (3.0-sqrt(3.0))/6.0
+                          0.366025403784439,
+                          // 0.5*(sqrt(3.0)-1.0)
+                          -0.577350269189626,
+                          // -1.0 + 2.0 * C.x
+                          0.024390243902439);
+                          // 1.0 / 41.0
+
+      // First corner (x0)
+      vec2 i  = floor(v + dot(v, C.yy));
+      vec2 x0 = v - i + dot(i, C.xx);
+
+      // Other two corners (x1, x2)
+      vec2 i1 = vec2(0.0);
+      i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0, 1.0);
+      vec2 x1 = x0.xy + C.xx - i1;
+      vec2 x2 = x0.xy + C.zz;
+
+      // Do some permutations to avoid
+      // truncation effects in permutation
+      i = mod289(i);
+      vec3 p = permute(
+              permute( i.y + vec3(0.0, i1.y, 1.0))
+                  + i.x + vec3(0.0, i1.x, 1.0 ));
+
+      vec3 m = max(0.5 - vec3(
+                          dot(x0,x0),
+                          dot(x1,x1),
+                          dot(x2,x2)
+                          ), 0.0);
+
+      m = m*m ;
+      m = m*m ;
+
+      // Gradients:
+      //  41 pts uniformly over a line, mapped onto a diamond
+      //  The ring size 17*17 = 289 is close to a multiple
+      //      of 41 (41*7 = 287)
+
+      vec3 x = 2.0 * fract(p * C.www) - 1.0;
+      vec3 h = abs(x) - 0.5;
+      vec3 ox = floor(x + 0.5);
+      vec3 a0 = x - ox;
+
+      // Normalise gradients implicitly by scaling m
+      // Approximation of: m *= inversesqrt(a0*a0 + h*h);
+      m *= 1.79284291400159 - 0.85373472095314 * (a0*a0+h*h);
+
+      // Compute final noise value at P
+      vec3 g = vec3(0.0);
+      g.x  = a0.x  * x0.x  + h.x  * x0.y;
+      g.yz = a0.yz * vec2(x1.x,x2.x) + h.yz * vec2(x1.y,x2.y);
+      return 130.0 * dot(m, g);
+    }
+
+			void main()	{
+				vec4 color = vec4( vColor );
+				color.r += sin( vPosition.x * 10.0 + time )
+        + cos( vPosition.y * 2.0 + time ) * tan( vPosition.z * 3.5 + time);
+        vec2 st = vec2(0.0, 0.0);
+        st.x = vPosition.x * 2.20110822 + time;
+        st.y = vPosition.y * 2.17863456 + time;
+        color.g += snoise( st.yx );
+				gl_FragColor = color;
+			}
+		</script>
 <script>
-	//////////////////////////////////////////////////////////////////////////////////
-	//		Init
-	//////////////////////////////////////////////////////////////////////////////////
+
+	var mat2, plane;
+	var camera, scene, renderer, composer;
+	var object, light;
+
+	var glitchPass;
+
 
 	// init renderer
-	var renderer	= new THREE.WebGLRenderer({
+	renderer	= new THREE.WebGLRenderer({
 		antialias: true,
 		alpha: true
 	});
-  var w = window.innerWidth;
-  var h = window.innerHeight;
+
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( w, h );
-	renderer.domElement.style.position = 'absolute'
-	renderer.domElement.style.top = '0px'
-	renderer.domElement.style.left = '0px'
+	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
-	// array of functions for the rendering loop
-	var onRenderFcts= [];
-
 	// init scene and camera
-	var scene	= new THREE.Scene();
+	scene	= new THREE.Scene();
+	scene.fog = new THREE.Fog( 0x000000, 1, 1000 );
 
-	//////////////////////////////////////////////////////////////////////////////////
-	//		Initialize a basic camera
-	//////////////////////////////////////////////////////////////////////////////////
-
-	// Create a camera
+	// Create a camera 	note: the camera will be added in the final composer pass
 	var camera = new THREE.Camera();
+	camera.position.z = 5;
 	scene.add(camera);
+
+	var onRenderFcts= [];
 
 	////////////////////////////////////////////////////////////////////////////////
 	//          handle arToolkitSource
@@ -47,18 +151,18 @@ meta-name: false
 	})
 
 	arToolkitSource.init(function onReady(){
-		onResize()
+		onResizeElement()
 	})
 
 	// handle resize
 	window.addEventListener('resize', function(){
-		onResize()
+		onResizeElement()
 	})
-	function onResize(){
-		arToolkitSource.onResize()
-		arToolkitSource.copySizeTo(renderer.domElement)
+	function onResizeElement(){
+		arToolkitSource.onResizeElement()
+		arToolkitSource.copyElementSizeTo(renderer.domElement)
 		if( arToolkitContext.arController !== null ){
-			arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
+			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)
 		}
 	}
 	////////////////////////////////////////////////////////////////////////////////
@@ -68,7 +172,6 @@ meta-name: false
 
 	// create atToolkitContext
 	var arToolkitContext = new THREEx.ArToolkitContext({
-		//cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../resources/data/camera_para.dat',
 		cameraParametersUrl: '../../resources/data/camera_para.dat',
 		detectionMode: 'mono',
 	})
@@ -86,6 +189,7 @@ meta-name: false
 
 		// update scene.visible if the marker is seen
 		scene.visible = camera.visible
+
 	})
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -96,121 +200,82 @@ meta-name: false
 	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
 		type : 'pattern',
 		patternUrl : '../../resources/data/noise-noise.patt',
+		//patternUrl : '../../resources/data/patt.hiro',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
 	})
 	// as we do changeMatrixMode: 'cameraTransformMatrix', start with invisible scene
 	scene.visible = false
 
-	//////////////////////////////////////////////////////////////////////////////////
-	//		add a gltf object in the scene
-	//////////////////////////////////////////////////////////////////////////////////
 
-  var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
-  scene.add( ambientLight );
+	  // geometry
+	  var triangles = 200;
+	  var geometry = new THREE.BufferGeometry();
+	  var positions = [];
+	  var colors = [];
+	  for ( var i = 0; i < triangles; i ++ ) {
+	    positions.push( Math.random() - 0.5 );
+	    positions.push( Math.random() - 0.5 );
+	    positions.push( Math.random() - 0.5  );
+	    colors.push( Math.random() * 255 );
+	    colors.push( Math.random() * 255 );
+	    colors.push( Math.random() * 255 );
+	    colors.push( Math.random() * 255 );
+	    }
 
-  var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
-  camera.add( pointLight );
+	  var positionAttribute = new THREE.Float32BufferAttribute( positions, 3 );
+	  var colorAttribute = new THREE.Uint8BufferAttribute( colors, 4 );
+	  colorAttribute.normalized = true; // this will map the buffer values to 0.0f - +1.0f in the shader
+	  geometry.addAttribute( 'position', positionAttribute );
+	  geometry.addAttribute( 'color', colorAttribute );
 
-	var manager = new THREE.LoadingManager();
-	manager.onProgress = function ( item, loaded, total ) {
+	  // material
+	  var material = new THREE.RawShaderMaterial( {
+	    	uniforms: {
+	    	time: { value: 1.0 }
+	    					},
+	        vertexShader: document.getElementById( 'vertexShader' ).textContent,
+	    	fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
+	    	side: THREE.DoubleSide,
+	    	transparent: true
+	    	} );
 
-		console.log( item, loaded, total );
+	  var mesh = new THREE.Mesh( geometry, material );
+	  mesh.scale.x = 2.35;
+	  mesh.scale.y = 2.35;
+	  mesh.scale.z = 2.35;
+	  scene.add( mesh );
 
-	};
+	  scene.add( new THREE.AmbientLight( 0x222222 ) );
 
-	var texture = new THREE.TextureLoader().load( '../../resources/data/textures/flower02.png' );
+	  light = new THREE.DirectionalLight( 0xffffff );
+	  light.position.set( 1, 1, 1 );
+	  scene.add( light );
 
-	var billboard = new THREE.PlaneGeometry(1,1,1,1);
-  var material = new THREE.MeshBasicMaterial( { map: texture } );
-	var mesh2 = new THREE.Mesh( billboard, material );
-	mesh2.rotation.x = -0.5*Math.PI;
-	mesh2.scale.x = 2.1;
-	mesh2.scale.y = 2.1;
-	mesh2.scale.z = 2.1;
-	scene.add(mesh2);
+	  // postprocessing
 
-	var loader = new THREE.FontLoader();
-	loader.load( '../../resources/fonts/helvetiker_regular.typeface.json', function ( font ) {
+	  composer = new THREE.EffectComposer( renderer );
+	  composer.addPass( new THREE.RenderPass( scene, camera ) );
 
-		var xMid, text;
+	  glitchPass = new THREE.GlitchPass();
+	  glitchPass.goWild = false;
+	  composer.addPass( glitchPass );
 
-		var textShape = new THREE.BufferGeometry();
-
-		var color = 0x0000cc;
-
-		var matDark = new THREE.LineBasicMaterial( {
-			color: color,
-			side: THREE.DoubleSide
-		} );
-
-		var matLite = new THREE.MeshBasicMaterial( {
-			color: color,
-			transparent: true,
-			opacity: 0.5,
-			side: THREE.DoubleSide
-		} );
-
-		var message = "art poetry";
-
-		var shapes = font.generateShapes( message, 2, 2 );
-
-		var geometry = new THREE.ShapeGeometry( shapes );
-		geometry.computeBoundingBox();
-
-		xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-
-		geometry.translate( xMid, 0, 0 );
-
-		// make shape ( N.B. edge view not visible )
-
-		textShape.fromGeometry( geometry );
-
-		text = new THREE.Mesh( textShape, matLite );
-		text.rotation.x=-0.5*Math.PI;
-		text.scale.x=0.1;
-		text.scale.y=0.1;
-		text.scale.z=0.1;
-		text.position.z = - 1.5;
-		scene.add( text );
-
-		// make line shape ( N.B. edge view remains visible )
-
-		var holeShapes = [];
-
-		for ( var i = 0; i < shapes.length; i ++ ) {
-
-			var shape = shapes[ i ];
-
-			if ( shape.holes && shape.holes.length > 0 ) {
-
-				for ( var j = 0; j < shape.holes.length; j ++ ) {
-
-					var hole = shape.holes[ j ];
-					holeShapes.push( hole );
-
-				}
-
-			}
-
-		}
-
-		shapes.push.apply( shapes, holeShapes );
-
-
-	} ); //end load function
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
 
+
 	// render the scene
 	onRenderFcts.push(function(){
-		renderer.render( scene, camera );
+	//renderer.render( scene, camera );
+	composer.render();
 	})
 
 	// run the rendering loop
 	var lastTimeMsec= null
+
 	requestAnimationFrame(function animate(nowMsec){
 		// keep looping
 		requestAnimationFrame( animate );
@@ -218,8 +283,12 @@ meta-name: false
 		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
 		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
 		lastTimeMsec	= nowMsec
-		var time = Date.now() * 0.001;
-		mesh2.rotation.z = time;
+
+		var time = performance.now();
+		//console.log(scene.children);
+		var object = scene.children[ 1 ];
+		object.rotation.y = time * 0.0005;
+		object.material.uniforms.time.value = time * 0.005;
 		// call each update function
 		onRenderFcts.forEach(function(onRenderFct){
 			onRenderFct(deltaMsec/1000, nowMsec/1000)

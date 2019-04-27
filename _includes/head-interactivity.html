@@ -3,6 +3,7 @@
 	<!-- link to main stylesheet -->
 	<link rel="stylesheet" type="text/css" href="../../resources/css/main.css">
 {% include cookieconsent.html %}
+{% if page.title != "Noise Noise" %}
   <script src='../../resources/three.min.js'></script>
   {% case page.title %}
     {% when "Mon cher Mondrian" %}
@@ -31,8 +32,28 @@
       <script src="../../resources/ar.min.js"></script>
       <script src="../../resources/js/renderers/CanvasRenderer.js"></script>
       <script src="../../resources/js/renderers/Projector.js"></script>
+		{% when "Noise Noise" %}
+			<script src="../../resources/ar.min.js"></script>
+			<script src="../../resources/js/shaders/CopyShader.js"></script>
+			<script src="../../resources/js/shaders/DigitalGlitch.js"></script>
+			<script src="../../resources/js/postprocessing/EffectComposer.js"></script>
+			<script src="../../resources/js/postprocessing/RenderPass.js"></script>
+			<script src="../../resources/js/postprocessing/MaskPass.js"></script>
+			<script src="../../resources/js/postprocessing/ShaderPass.js"></script>
+			<script src="../../resources/js/postprocessing/GlitchPass.js"></script>
     {% else %}
   {% endcase %}
+	{% else %}
+	<script src='../../resources/three-r103.min.js'></script>
+	<script src="../../resources/ar.min.js"></script>
+	<script src="../../resources/js/shaders/CopyShader.js"></script>
+	<script src="../../resources/js/shaders/DigitalGlitch.js"></script>
+	<script src="../../resources/js/postprocessing/EffectComposer.js"></script>
+	<script src="../../resources/js/postprocessing/RenderPass.js"></script>
+	<script src="../../resources/js/postprocessing/MaskPass.js"></script>
+	<script src="../../resources/js/postprocessing/ShaderPass.js"></script>
+	<script src="../../resources/js/postprocessing/GlitchPass.js"></script>
+	{% endif %}
   <!-- <script>THREEx.ArToolkitContext.baseURL = '../'</script> -->
   {%if meta-name %}
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
