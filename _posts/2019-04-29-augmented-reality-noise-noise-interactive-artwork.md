@@ -1,5 +1,6 @@
 ---
 layout: post
+idx: 19
 title: Augmented reality | Noise Noise interactive artwork
 description: >-
   I present my interactive artwork with augmented reality "Noise Noise" made
