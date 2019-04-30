@@ -103,7 +103,7 @@ twitter:
   username: kalwalt
 github_username: kalwalt
 # Google Analytics
-analytics_id: ""
+analytics_id: "UA-114030597-3"
 markdown: kramdown
 #permalink: /blog/:year/:month/:day/:title
 github: [metadata]
