@@ -73,16 +73,13 @@ collections: # A list of collections the CMS should be able to edit
     label: "Articles tree"
     files:
       - label: "Article tree"
-      - name: "Article tree"
-      - file: "_data/articleTree.yml"
-      - extension: yml
-      - format: yml
-      - create: false
-      - delete: false
-      - hint: >-
-          This is a yml file where to set the links for every article in the switcher selector
-          for the language, fill the id and the path of the article.
-      - fields:
+        name: "Article tree"
+        file: "_data/articleTree.yml"
+        extension: yml
+        format: yml
+        create: false
+        delete: false
+        fields:
         - label: "id"
           name: "id"
           widget: "number"
