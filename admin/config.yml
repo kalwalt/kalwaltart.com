@@ -74,6 +74,8 @@ collections: # A list of collections the CMS should be able to edit
     format: yml
     name: "articleTree"
     files:
+      - label: "Article tree"
+      - name: "Article tree"
       - folder: "_data"
       - file: "_data/articleTree.yml"
       - create: false
