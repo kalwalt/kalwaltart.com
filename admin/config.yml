@@ -73,7 +73,8 @@ collections: # A list of collections the CMS should be able to edit
     extension: yml
     format: yml
     name: "articleTree"
-    folder: "_data/articleTree"
+    folder: "_data"
+    file: "articleTree"
     create: false
     delete: false
     fields:
