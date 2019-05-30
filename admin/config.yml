@@ -72,14 +72,14 @@ collections: # A list of collections the CMS should be able to edit
   - name: "article struct"
     label: "Articles struct"
     folder: "_data"
+    extension: yml
+    format: yml
+    create: false
+    delete: false
     files:
       - label: "Article tree"
         name: "Article tree"
         file: "_data/articleTree.yml"
-        extension: yml
-        format: yml
-        create: false
-        delete: false
         fields:
           - label: "id"
             name: "id"
