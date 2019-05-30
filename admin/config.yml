@@ -75,4 +75,5 @@ collections: # A list of collections the CMS should be able to edit
     file: "_data/articleTree.yml"
     fields:
       - {label: "id", name: "id", widget: "number"}
-      - {label: "Path name", name: "name", widget: "string"}
+      fields:
+        - {label: "Path name", name: "name", widget: "string"}
