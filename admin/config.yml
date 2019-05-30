@@ -81,7 +81,7 @@ collections: # A list of collections the CMS should be able to edit
         create: false
         delete: false
         fields:
-        - label: "id"
-          name: "id"
-          widget: "number"
-        - {label: "Path name", name: "name", widget: "string"}
+          - label: "id"
+            name: "id"
+            widget: "number"
+          - {label: "Path name", name: "name", widget: "string"}
