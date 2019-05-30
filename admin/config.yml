@@ -70,14 +70,13 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - label: "Articles tree"
-    extension: yml
-    format: yml
     name: "articleTree"
     files:
       - label: "Article tree"
       - name: "Article tree"
-      - folder: "_data"
       - file: "_data/articleTree.yml"
+      - extension: yml
+      - format: yml
       - create: false
       - delete: false
       - hint: >-
