@@ -76,6 +76,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - label: "Article tree"
         name: "Article tree"
+        widget: "list"
         fields:
           - {label: "id", name: "id", widget: "number"}
           - {label: "Path name", name: "name", widget: "string"}
