@@ -69,8 +69,8 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Section", name: "section", widget: "hidden", default: "{{name}}"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
-  - label: "Articles tree"
-    name: "articleTree"
+  - name: "articleTree"
+    label: "Articles tree"
     files:
       - label: "Article tree"
       - name: "Article tree"
@@ -86,4 +86,5 @@ collections: # A list of collections the CMS should be able to edit
         - label: "id"
           name: "id"
           widget: "number"
-        - {label: "Path name", name: "name", widget: "string"}
+          fields:
+            - {label: "Path name", name: "name", widget: "string"}
