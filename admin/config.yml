@@ -71,11 +71,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "article struct"
     label: "Articles struct"
-    folder: "_data"
-    extension: yml
-    format: yml
-    create: false
-    delete: false
     files:
       - label: "Article tree"
         name: "Article tree"
