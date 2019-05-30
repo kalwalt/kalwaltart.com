@@ -71,6 +71,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "articleTree"
     label: "Articles tree"
+    folder: "_data"
     files:
       - label: "Article tree"
         name: "Article tree"
