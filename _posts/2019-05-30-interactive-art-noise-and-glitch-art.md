@@ -1,16 +1,17 @@
 ---
 layout: post
+idx: 20
 title: 'Interactive art, noise and glitch art.'
 description: >-
   "Noise noise" is the new interactive painting I made. It is an interactive
   work with augmented reality. Painted with acrylic paint by Walter Perdan.
   Reflection on noise and glitch art.
 author: Walter Perdan
-date: '2019-05-30 00:05:75'
+date: 2019-05-29T22:00:00.000Z
 lang: en
 seo:
   author: Walter Perdan
-  datePublished: '2019-05-30'
+  datePublished: 2019-05-29T22:00:00.000Z
   type: BlogPosting
 image: 'https://ucarecdn.com/992ff53f-c81d-47c7-983a-0da9232ebf62/'
 intro_paragraph: >-
