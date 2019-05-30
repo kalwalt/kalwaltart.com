@@ -84,5 +84,4 @@ collections: # A list of collections the CMS should be able to edit
       - label: "id"
         name: "id"
         widget: "number"
-        fields:
       - {label: "Path name", name: "name", widget: "string"}
