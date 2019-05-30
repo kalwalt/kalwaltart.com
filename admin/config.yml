@@ -71,14 +71,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "article struct"
     label: "Articles struct"
-    files:
+    folder: "_data"
+    file: "_data/articleTree.yml"
+    fields:
       - label: "Article tree"
         name: "Article tree"
-        file: "_data/articleTree.yml"
         fields:
-          - label: "list"
-            name: "list of articles"
-            widget: "list"
-            fields:
-              - {label: "id", name: "id", widget: "number"}
-              - {label: "Path name", name: "name", widget: "string"}
+          - {label: "id", name: "id", widget: "number"}
+          - {label: "Path name", name: "name", widget: "string"}
