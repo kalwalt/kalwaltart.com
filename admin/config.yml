@@ -79,6 +79,6 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "id", name: "id", widget: "number"}
       - {label: "Path name", name: "name", widget: "string"}
-      hint: >-
-        This is a yml file where to set the links for every article in the switcher selector
-        for the language, fill the id and the path of the article.
+    hint: >-
+      This is a yml file where to set the links for every article in the switcher selector
+      for the language, fill the id and the path of the article.
