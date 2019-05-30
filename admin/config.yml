@@ -74,5 +74,9 @@ collections: # A list of collections the CMS should be able to edit
     folder: "_data"
     file: "_data/articleTree.yml"
     fields:
-      - {label: "id", name: "id", widget: "number"}
-      - {label: "Path name", name: "name", widget: "string"}
+      - label: "Article tree"
+        name: "Article tree"
+        widget: "list"
+        fields:
+          - {label: "id", name: "id", widget: "number"}
+          - {label: "Path name", name: "name", widget: "string"}
