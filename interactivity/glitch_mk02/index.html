@@ -1,0 +1,181 @@
+---
+layout: interactivity
+title: Glitch mk02
+meta-name: false
+---
+<body>
+<script>
+  var renderer, scene, camera, cube, dt_size;
+  var uniforms;
+
+	// array of functions for the rendering loop
+	var onRenderFcts= [];
+
+	// init renderer
+	renderer	= new THREE.WebGLRenderer({
+		antialias: true,
+		alpha: true
+	});
+	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
+	renderer.setSize( 800, 600 );
+	renderer.domElement.style.position = 'absolute'
+	renderer.domElement.style.top = '0px'
+	renderer.domElement.style.left = '0px'
+	document.body.appendChild( renderer.domElement );
+	scene = new THREE.Scene();
+
+	// Create a camera
+	camera = new THREE.Camera();
+	scene.add(camera);
+
+	////////////////////////////////////////////////////////////////////////////////
+	//          handle arToolkitSource
+	////////////////////////////////////////////////////////////////////////////////
+
+	var arToolkitSource = new THREEx.ArToolkitSource({
+		// to read from the webcam
+		sourceType : 'webcam',
+
+	})
+
+	arToolkitSource.init(function onReady(){
+		onResize()
+	})
+
+	// handle resize
+	window.addEventListener('resize', function(){
+		onResize()
+	})
+
+	function onResize(){
+		arToolkitSource.onResizeElement()
+		arToolkitSource.copyElementSizeTo(renderer.domElement)
+		if( arToolkitContext.arController !== null ){
+			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)
+		}
+	}
+	////////////////////////////////////////////////////////////////////////////////
+	//          initialize arToolkitContext
+	////////////////////////////////////////////////////////////////////////////////
+
+
+	// create atToolkitContext
+	var arToolkitContext = new THREEx.ArToolkitContext({
+		cameraParametersUrl: '../../resources/data/camera_para.dat',
+		detectionMode: 'mono',
+	})
+	// initialize it
+	arToolkitContext.init(function onCompleted(){
+		// copy projection matrix to camera
+		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+	})
+
+	// update artoolkit on every frame
+	onRenderFcts.push(function(){
+		if( arToolkitSource.ready === false )	return
+
+		arToolkitContext.update( arToolkitSource.domElement )
+
+		// update scene.visible if the marker is seen
+		scene.visible = camera.visible
+	})
+
+	////////////////////////////////////////////////////////////////////////////////
+	//          Create a ArMarkerControls
+	////////////////////////////////////////////////////////////////////////////////
+
+	// init controls for camera
+	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
+		type : 'pattern',
+		patternUrl : '../../resources/data/pattern-6markers_ar0002.patt',
+		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
+		changeMatrixMode: 'cameraTransformMatrix'
+	})
+	// as we do changeMatrixMode: 'cameraTransformMatrix', start with invisible scene
+	scene.visible = false
+
+
+
+  if ( THREE.DigitalGlitch === undefined ) console.error( "THREE.GlitchPass relies on THREE.DigitalGlitch" );
+
+  var shader = THREE.DigitalGlitch;
+  uniforms = THREE.UniformsUtils.clone( shader.uniforms );
+
+  if ( dt_size == undefined ) dt_size = 64;
+  var loader = new THREE.TextureLoader();
+  diffuseTex = loader.load( '../../resources/data/textures/pattern-6markers_ar0002_sb.png' );
+
+  uniforms[ "tDisp" ].value = generateHeightmap( dt_size );
+  uniforms[ "tDiffuse" ].value = diffuseTex;
+  uniforms[ 'seed' ].value = Math.random();//default seeding
+  uniforms[ 'byp' ].value = 0;
+  uniforms[ 'amount' ].value = Math.random() / 90;
+  uniforms[ 'angle' ].value = THREE.Math.randFloat( - Math.PI, Math.PI );
+  uniforms[ 'distortion_x' ].value = THREE.Math.randFloat( -1, 1 );
+  uniforms[ 'distortion_y' ].value = THREE.Math.randFloat( 0, 2 );
+  uniforms[ 'seed_x' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
+  uniforms[ 'seed_y' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
+  uniforms[ 'col_s' ].value = THREE.Math.randFloat( - 0.5, 0.5 );
+
+
+  var material = new THREE.ShaderMaterial( {
+		uniforms: uniforms,
+		vertexShader: shader.vertexShader,
+		fragmentShader: shader.fragmentShader
+	} );
+
+	generateTrigger();
+
+
+    var geometry = new THREE.PlaneGeometry( 1, 1, 1, 1 );
+    plane = new THREE.Mesh( geometry, material );
+		plane.rotation.x = -0.5*Math.PI;
+    scene.add(plane);
+
+function generateTrigger() {
+
+  this.randX = THREE.Math.randInt( 120, 240 );
+
+}
+
+function generateHeightmap( dt_size ) {
+
+  var data_arr = new Float32Array( dt_size * dt_size * 3 );
+  var length = dt_size * dt_size;
+
+  for ( var i = 0; i < length; i ++ ) {
+
+    var val = THREE.Math.randFloat( 0, 1 );
+    data_arr[ i * 3 + 0 ] = val;
+    data_arr[ i * 3 + 1 ] = val;
+    data_arr[ i * 3 + 2 ] = val;
+
+  }
+  var texture = new THREE.DataTexture( data_arr, dt_size, dt_size, THREE.RGBFormat, THREE.FloatType );
+  texture.needsUpdate = true;
+}
+
+	// render the scene
+	onRenderFcts.push(function(){
+		renderer.render( scene, camera );
+	})
+
+	// run the rendering loop
+	var lastTimeMsec= null
+	requestAnimationFrame(function animate(nowMsec){
+		// keep looping
+		requestAnimationFrame( animate );
+		// measure time
+		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+		lastTimeMsec	= nowMsec
+		var time = Date.now() * 0.001;
+		uniforms[ 'seed' ].value = Math.random();
+		uniforms[ 'amount' ].value = Math.random() / 90;
+		// call each update function
+		onRenderFcts.forEach(function(onRenderFct){
+			onRenderFct(deltaMsec/1000, nowMsec/1000)
+		})
+	})
+</script>
+</body>
