@@ -124,19 +124,12 @@ meta-name: false
 		fragmentShader: shader.fragmentShader
 	} );
 
-	generateTrigger();
-
-
     var geometry = new THREE.PlaneGeometry( 1, 1, 1, 1 );
     plane = new THREE.Mesh( geometry, material );
 		plane.rotation.x = -0.5*Math.PI;
+		plane.scale.x = 1.5;
+		plane.scale.y = 1.5;
     scene.add(plane);
-
-function generateTrigger() {
-
-  this.randX = THREE.Math.randInt( 120, 240 );
-
-}
 
 function generateHeightmap( dt_size ) {
 
