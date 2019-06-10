@@ -172,6 +172,7 @@ function generateHeightmap( dt_size ) {
 		var time = Date.now() * 0.001;
 		uniforms[ 'seed' ].value = Math.random();
 		uniforms[ 'amount' ].value = Math.random() / 90;
+		uniforms[ 'distortion_x' ].value = THREE.Math.randFloat( -1, 1 );
 		// call each update function
 		onRenderFcts.forEach(function(onRenderFct){
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
