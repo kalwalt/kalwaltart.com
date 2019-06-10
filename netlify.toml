@@ -4,7 +4,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "form-action https:"
-    Referrer-Policy = "origin-when-cross-origin"
+    Referrer-Policy = "strict-origin"
     Strict-Transport-Security = "max-age=2592000"
     Feature-Policy = "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'none'; payment 'none'"
     X-Content-Type-Options = "nosniff"
