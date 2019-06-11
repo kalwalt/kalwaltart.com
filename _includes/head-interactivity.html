@@ -3,7 +3,7 @@
 	<!-- link to main stylesheet -->
 	<link rel="stylesheet" type="text/css" href="../../resources/css/main.css">
 {% include cookieconsent.html %}
-{% if page.title != "Noise Noise" %}
+{% if page.title != "Noise Noise" or page.title != "Glitch mk02" %}
   <script src='../../resources/three.min.js'></script>
   {% case page.title %}
     {% when "Mon cher Mondrian" %}
@@ -41,6 +41,10 @@
 			<script src="../../resources/js/postprocessing/MaskPass.js"></script>
 			<script src="../../resources/js/postprocessing/ShaderPass.js"></script>
 			<script src="../../resources/js/postprocessing/GlitchPass.js"></script>
+		{% when "Glitch mk02"%}
+			<script src="../../resources/ar.min.js"></script>
+			<script src='../../resources/three-r103.min.js'></script>
+			<script src="../../resources/js/shaders/DigitalGlitch.js"></script>
     {% else %}
   {% endcase %}
 	{% else %}
