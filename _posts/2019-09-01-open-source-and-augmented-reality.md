@@ -5,13 +5,13 @@ title: 'Open Source and Augmented Reality.'
 description: >-
   Some considerations on the relationship between open source and augmented reality: The open source philosophy, and what open source resources exist for a creative in the field of augmented reality and interactive art.
 author: Walter Perdan
-date: 2019-09-01
+date: '2019-09-01 22:34:12'
 lang: en
 seo:
   author: Walter Perdan
   datePublished: 2019-09-01
   type: BlogPosting
-image: 'https://ucarecdn.com/93d0b062-4b1b-4362-a8f4-1d56797212b8/Artoolkitx_inside_atom.webp'
+image: 'https://ucarecdn.com/1be8cb43-b584-439c-a7a3-72a74e11465f/Artoolkitx_inside_atom.webp'
 intro_paragraph: >-
   The scenario of Augmented Reality in the Open Source world.
 categories: Interactive-art
@@ -19,7 +19,7 @@ tags: >-
   Interactive-art AR Art 2019 Augmented-reality Artoolkit ArtoolkitX
 ---
 
-{% include figure.html width="1200" caption="Developing ArtoolkitX.js on Atom editor..." height="844" alt="Screenshot on the ArtoolkitX,js development" name="Artoolkitx_inside_atom" target="_blank" title="ArtoolkitX.js an Open Source project for the AR" rel="author" jpg_id="121b75bc-dbfe-47f6-9483-af527be0f288" link="https://www.walterperdan.com" webp_id="121b75bc-dbfe-47f6-9483-af527be0f288" %}
+{% include figure.html width="1200" caption="Developing ArtoolkitX.js on Atom editor..." height="844" alt="Screenshot on the ArtoolkitX,js development" name="Artoolkitx_inside_atom" target="_blank" title="ArtoolkitX.js an Open Source project for the AR" rel="author" jpg_id="b1bac8a4-4e03-4766-9a89-1d3452dd019d" link="https://www.walterperdan.com" webp_id="1be8cb43-b584-439c-a7a3-72a74e11465f" %}
 
 [**Open Source**](https://en.wikipedia.org/wiki/Open_source) is a term that derives directly from the world of computer science. It means that the source code is open to all programmers, based on the license with which it is distributed. An Open Source project can therefore be copied, modified, re-distributed or, if the license permits, the developer can also sell the software he created.
 
