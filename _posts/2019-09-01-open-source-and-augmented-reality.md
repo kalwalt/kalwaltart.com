@@ -19,7 +19,7 @@ tags: >-
   Interactive-art AR Art 2019 Augmented-reality Artoolkit ArtoolkitX
 ---
 
-{% include figure.html width="1200" caption="Developing ArtoolkitX.js on Atom editor..." height="844" alt="Screenshot on the ArtoolkitX,js development" name="Artoolkitx_inside_atom" target="_blank" title="ArtoolkitX.js an Open Source project for the AR" rel="author" link="https://github.com/kalwalt" jpg_id="b1bac8a4-4e03-4766-9a89-1d3452dd019d" webp_id="1be8cb43-b584-439c-a7a3-72a74e11465f" %}
+{% include figure.html width="1200" caption="Developing ArtoolkitX.js on Atom editor..." height="685" alt="Screenshot on the ArtoolkitX.js development" name="Artoolkitx_inside_atom" target="_blank" title="ArtoolkitX.js an Open Source project for the AR" rel="author" link="https://github.com/kalwalt" jpg_id="b1bac8a4-4e03-4766-9a89-1d3452dd019d" webp_id="1be8cb43-b584-439c-a7a3-72a74e11465f" %}
 
 [**Open Source**](https://en.wikipedia.org/wiki/Open_source) is a term that derives directly from the world of computer science. It means that the source code is open to all programmers, based on the license with which it is distributed. An Open Source project can therefore be copied, modified, re-distributed or, if the license permits, the developer can also sell the software he created.
 
