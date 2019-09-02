@@ -9,7 +9,7 @@ date: '2019-09-01 22:34:12'
 lang: en
 seo:
   author: Walter Perdan
-  datePublished: 2019-09-01
+  datePublished: '2019-09-01'
   type: BlogPosting
 image: 'https://ucarecdn.com/1be8cb43-b584-439c-a7a3-72a74e11465f/Artoolkitx_inside_atom.webp'
 intro_paragraph: >-
