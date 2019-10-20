@@ -3,7 +3,7 @@ layout: interactivity
 title: Glif 01
 meta-name: false
 ---
-
+<script src="../../resources/js/loaders/GLTFLoader.js"></script>
 <script>
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Init
@@ -124,15 +124,17 @@ meta-name: false
 
 	};
 
-	var mat = new THREE.MeshLambertMaterial({color: 0xbbbbff});
-  var cubeGeom = new THREE.CubeGeometry(1,1,1);
-  var cube = new THREE.Mesh(cubeGeom, mat);
-  cube.rotation.x=-0.5*Math.PI;
-	cube.scale.x = 1.1;
-	cube.scale.y = 1.1;
-	cube.position.y = cubeGeom.parameters.height/2;
-  scene.add(cube);
+	var obj = new THREE.Object3D();
 
+	var loader = new THREE.GLTFLoader();
+					loader.load( '../../resources/models/glif01/glTF/glif01.gltf', function ( gltf ) {
+						gltf.scene.scale.set(0.5,0.5,0.5);
+						obj.add( gltf.scene );
+					} , undefined, function ( error ) {
+						 console.error( error );
+					 });
+
+ scene.add( obj );
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
