@@ -21,7 +21,7 @@ intro_paragraph: >-
   learn more ...
 tags: AR Arte 2019 Augmented-Reality jsartoolkit5 markerless Studio-Orta
 ---
-{% include figure.html width="1800" caption="In front of Studio Orta atelier and clouds..." height="1353" alt="Studio Orta Les Moulins" name="les_moulins_studio_orta" target="_blank" title="In front of Studio Orta atelier" rel="author" jpg_id="d7bcd408-516a-41b8-8ae4-514e532bc6c3" link="https://www.studio-orta.com/" webp_id="5fc47593-060a-4187-9c88-d87c4eef8825" %}
+{% include figure.html width="1800" caption="In front of Studio Orta atelier and Clouds | Metoros, artwork presented at  2013 Terrace Wires, St Pancras International London, UK." height="1353" alt="Studio Orta Les Moulins" name="les_moulins_studio_orta" target="_blank" title="In front of Studio Orta atelier" rel="author" jpg_id="d7bcd408-516a-41b8-8ae4-514e532bc6c3" link="https://www.studio-orta.com/" webp_id="5fc47593-060a-4187-9c88-d87c4eef8825" %}
 
 ## Studio Orta les Moulins
 
