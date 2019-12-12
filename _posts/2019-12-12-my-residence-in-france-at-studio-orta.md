@@ -13,7 +13,7 @@ seo:
   author: Walter Perdan
   datePublished: 2019-12-12T00:03:08.950Z
   type: BlogPosting
-image: 'https://ucarecdn.com/8e6eedab-4fdc-448e-a8e1-7704844ecad3/'
+image: 'https://ucarecdn.com/d7bcd408-516a-41b8-8ae4-514e532bc6c3/les_moulins_studio_orta.jpg'
 intro_paragraph: >-
   From September to the beginning of December I worked at the Studio Orta at Les
   Moulins de S.Mairie (France), a formerly industrial site now recovered and
