@@ -12,7 +12,7 @@ publish_mode: editorial_workflow # Enable drafts
 media_library:
   name: uploadcare
   config:
-    publicKey: UPLOADCARE_KEY
+    publicKey: UPLOADCARE_PUB_KEY
 
 collections: # A list of collections the CMS should be able to edit
   # POSTS
