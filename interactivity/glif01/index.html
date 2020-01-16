@@ -3,6 +3,9 @@ layout: interactivity
 title: Glif 01
 meta-name: false
 ---
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
 <script src="../../resources/js/loaders/GLTFLoader.js"></script>
 <script>
 	//////////////////////////////////////////////////////////////////////////////////
@@ -101,13 +104,15 @@ meta-name: false
 	////////////////////////////////////////////////////////////////////////////////
 
 	// init controls for camera
+	var markerRoot = new THREE.Group
+	scene.add(markerRoot)
 	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
 		type : 'pattern',
 		patternUrl : '../../resources/data/multi-glif01/pattern-glif01-01.patt',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
 	})
-	scene.visible = false
+	//scene.visible = false
 
 	var obj = new THREE.Object3D();
 
@@ -118,13 +123,34 @@ meta-name: false
 						 console.error( error );
 					 });
 
- scene.add(obj);
+ //scene.add(obj);
+ //markerRoot.add(obj);
 
  var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
  scene.add( ambientLight );
 
  var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
  camera.add( pointLight );
+
+ // build a smoothedControls
+ var smoothedRoot = new THREE.Group()
+ scene.add(smoothedRoot)
+ var smoothedControls = new THREEx.ArSmoothedControls(smoothedRoot, {
+	 lerpPosition: 0.4,
+	 lerpQuaternion: 0.3,
+	 lerpScale: 1,
+	 // minVisibleDelay: 1,
+	 // minUnvisibleDelay: 1,
+ })
+
+ // var arWorldRoot = markerRoot
+ var arWorldRoot = smoothedRoot;
+ scene.add(smoothedRoot);
+ arWorldRoot.add(obj);
+
+ onRenderFcts.push(function(delta){
+	 smoothedControls.update(markerRoot)
+ })
 
  //////////////////////////////////////////////////////////////////////////////////
  //		render the whole thing on the page
