@@ -5,7 +5,7 @@
             "componentType" : 5121, 
             "count" : 300, 
             "max" : [
-                187
+                183
             ], 
             "min" : [
                 0
@@ -15,23 +15,23 @@
         {
             "bufferView" : 1, 
             "componentType" : 5126, 
-            "count" : 188, 
+            "count" : 184, 
             "max" : [
-                1.7902989387512207, 
-                3.0413317680358887, 
-                1.7414371967315674
+                0.8951494693756104, 
+                2.0319430828094482, 
+                0.8707185983657837
             ], 
             "min" : [
-                -1.8112250566482544, 
-                -1.0, 
-                -3.699660539627075
+                -0.9056125283241272, 
+                0.01127713918685913, 
+                -1.8498302698135376
             ], 
             "type" : "VEC3"
         }, 
         {
             "bufferView" : 2, 
             "componentType" : 5126, 
-            "count" : 188, 
+            "count" : 184, 
             "max" : [
                 1.0, 
                 1.0, 
@@ -58,32 +58,33 @@
         }, 
         {
             "buffer" : 0, 
-            "byteLength" : 2256, 
+            "byteLength" : 2208, 
             "byteOffset" : 300, 
             "target" : 34962
         }, 
         {
             "buffer" : 0, 
-            "byteLength" : 2256, 
-            "byteOffset" : 2556, 
+            "byteLength" : 2208, 
+            "byteOffset" : 2508, 
             "target" : 34962
         }
     ], 
     "buffers" : [
         {
-            "byteLength" : 4812, 
-            "uri" : "glif01.bin"
+            "byteLength" : 4716, 
+            "uri" : "glif01-02.bin"
         }
     ], 
     "materials" : [
         {
+            "alphaMode" : "BLEND", 
             "name" : "Material", 
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.6400000190734865, 
-                    0.6400000190734865, 
-                    0.6400000190734865, 
-                    1.0
+                    0.640000066757203, 
+                    0.46660071114600754, 
+                    0.004985348954578472, 
+                    0.6000000238418579
                 ], 
                 "metallicFactor" : 0.0
             }
@@ -121,12 +122,7 @@
         }, 
         {
             "mesh" : 0, 
-            "name" : "Cube", 
-            "translation" : [
-                0.0, 
-                1.0, 
-                -0.0
-            ]
+            "name" : "Cube"
         }, 
         {
             "name" : "Lamp", 
