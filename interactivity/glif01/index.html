@@ -17,11 +17,16 @@ meta-name: false
 	}
 	var renderer	= new THREE.WebGLRenderer({
 		antialias: true,
-		alpha: true
+		alpha: true,
+		precision: 'mediump'
 	});
+
+	var rendererWidth = window.innerWidth;
+	var rendererHeigth = window.innerHeigth;
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	//renderer.setSize( 640, 480 );
 	renderer.setSize( 800, 600 );
+	//testing with this instead, very experimental
+	//renderer.setSize( rendererWidth, rendererHeigth );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -70,10 +75,8 @@ meta-name: false
 	//          initialize arToolkitContext
 	////////////////////////////////////////////////////////////////////////////////
 
-
 	// create atToolkitContext
 	var arToolkitContext = new THREEx.ArToolkitContext({
-		//cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../resources/data/camera_para.dat',
 		cameraParametersUrl: '../../resources/data/camera_para.dat',
 		detectionMode: 'mono',
 	})
@@ -96,13 +99,9 @@ meta-name: false
 	////////////////////////////////////////////////////////////////////////////////
 	//          Create a ArMarkerControls
 	////////////////////////////////////////////////////////////////////////////////
-	//;(function(){
-	var markerRoot01 = new THREE.Group;
-	//scene.add(markerRoot01);
-	markerRoot01.name = 'marker1';
-	scene.add(markerRoot01);
+
 	// init controls for camera
-	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot01, {
+	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
 		type : 'pattern',
 		patternUrl : '../../resources/data/multi-glif01/pattern-glif01-01.patt',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
@@ -110,8 +109,6 @@ meta-name: false
 	})
 	scene.visible = false
 
-	//var markerScene = new THREE.Scene()
-	//markerRoot01.add(markerScene)
 	var obj = new THREE.Object3D();
 
 	var loader = new THREE.GLTFLoader();
@@ -122,63 +119,26 @@ meta-name: false
 						 console.error( error );
 					 });
 
- //scene.add( markerRoot01 );
-  markerRoot01.add(obj)
+ scene.add(obj);
 
-	var markerRoot02 = new THREE.Group
-	//scene.add(markerRoot02)
-	markerRoot02.name = 'marker2'
-	scene.add(markerRoot02)
-	// init controls for camera
-	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot02, {
-		type : 'pattern',
-		patternUrl : '../../resources/data/multi-glif01/pattern-glif01-02.patt',
-		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
-		changeMatrixMode: 'cameraTransformMatrix'
-	})
-	scene.visible = false
+ var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+ scene.add( ambientLight );
 
-//	var markerScene02 = new THREE.Scene()
-//	markerRoot02.add(markerScene02)
+ var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+ camera.add( pointLight );
 
-	// add a gizmo in the center of the marker
-	var geometry	= new THREE.OctahedronGeometry( 1, 1 )
-	var material	= new THREE.MeshNormalMaterial({
-		wireframe: true
-	});
-	var mesh	= new THREE.Mesh( geometry, material );
+ //////////////////////////////////////////////////////////////////////////////////
+ //		render the whole thing on the page
+ //////////////////////////////////////////////////////////////////////////////////
 
-  markerRoot02.add(mesh)
+ onRenderFcts.push(function(){
+	 renderer.render( scene, camera );
+ })
 
-  var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
-  scene.add( ambientLight );
-
-  var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
-  camera.add( pointLight );
-
-	//////////////////////////////////////////////////////////////////////////////////
-	//		render the whole thing on the page
-	//////////////////////////////////////////////////////////////////////////////////
-	;(function(){
-		var markerRoot01 = scene.getObjectByName('marker1')
-		var markerRoot02 = scene.getObjectByName('marker2')
-
-
-		var container = new THREE.Group
-		scene.add(container)
-
-		// render the scene
-		onRenderFcts.push(function(){
-			if( markerRoot01.visible === true || markerRoot02.visible === true ){
-				container.visible = true}
-			renderer.render( scene, camera );
-	})
-	})()
-
-	// run the rendering loop
-	var lastTimeMsec= null
-	requestAnimationFrame(function animate(nowMsec){
-		// keep looping
+ // run the rendering loop
+ var lastTimeMsec= null
+ requestAnimationFrame(function animate(nowMsec){
+	// keep looping
 		requestAnimationFrame( animate );
 		// measure time
 		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
@@ -190,5 +150,5 @@ meta-name: false
 		onRenderFcts.forEach(function(onRenderFct){
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
 		})
-	})
+ })
 </script>
