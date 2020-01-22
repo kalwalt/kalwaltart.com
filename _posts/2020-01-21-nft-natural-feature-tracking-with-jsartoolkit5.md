@@ -32,13 +32,13 @@ The term Markerless embraces a wide spectrum of possibilities, not only concerns
 
 ### Image features for the NFT
 
-Images to be used with NFT must have a reasonable  **degree of detail**  and  **sharp edges**  (a low degree of self-similarity and high spatial frequency), a  **good resolution**  and a rectangular shape (vertically or horizontally). As a reference, take into account the image we used for the tests: the [pinball.jpg](https://github.com/artoolkitx/artoolkit5/blob/master/doc/Marker%20images/pinball.jpg) (1637 x 2048 px)
+Images to be used with NFT must have a reasonable  **degree of detail**  and  **sharp edges**  (a low degree of self-similarity and high spatial frequency), a  **good resolution**  and a rectangular shape (vertically or horizontally). As a reference, take into account the image we used for the tests: the [pinball.jpg](https://github.com/artoolkitx/artoolkit5/blob/master/doc/Marker%20images/pinball.jpg) (1637 x 2048 px).
 
 {% include figure.html width="2048" caption="The pinball image used for the tests well suited for the tests" height="1637" alt="pinball jsartoolkit5 artoolkit" name="pinball" target="_self" title="The pinball image" rel="author" jpg_id="f4ab8949-a3a7-4144-924e-459e28100dae" link="#" webp_id="f4ab8949-a3a7-4144-924e-459e28100dae" %}
 
-instead the following image is not very suitable for NFT:
+Instead the following image is not very suitable for NFT:
 
-{% include figure.html width="1732" caption="Un esempio di immagine n example image not suitable for NFT" height="1080" alt="A minimal image" name="1732px-Wavy_Green_Field_in_Minimalist_Style" target="_blank" title="minimal landscape" rel="author" jpg_id="06bc7f87-6f84-43e3-89c8-dd8d43186aaf" wepb_id="d26874c2-383b-4b58-ba61-a385831fa337" link="https://commons.wikimedia.org/wiki/File:Wavy_Green_Field_in_Minimalist_Style.jpg#/media/File:Wavy_Green_Field_in_Minimalist_Style.jpg" webp_id="d26874c2-383b-4b58-ba61-a385831fa337" %}
+{% include figure.html width="1732" caption="An example image not suitable for NFT" height="1080" alt="A minimal image" name="1732px-Wavy_Green_Field_in_Minimalist_Style" target="_blank" title="minimal landscape" rel="author" jpg_id="06bc7f87-6f84-43e3-89c8-dd8d43186aaf" wepb_id="d26874c2-383b-4b58-ba61-a385831fa337" link="https://commons.wikimedia.org/wiki/File:Wavy_Green_Field_in_Minimalist_Style.jpg#/media/File:Wavy_Green_Field_in_Minimalist_Style.jpg" webp_id="d26874c2-383b-4b58-ba61-a385831fa337" %}
 
 The image above is not ideal for NFT since, even if it has a good resolution it has little variance. The result will be lower than the example above and consequently the application will struggle to trace the image.
 
