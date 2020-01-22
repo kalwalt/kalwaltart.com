@@ -18,13 +18,13 @@ image: 'https://ucarecdn.com/3742492d-9880-4533-abb3-3ae266c557b8/'
 intro_paragraph: ' **NFT N**atural  **F**eature  **T**racking is a markerless technology for augmented reality  which allows tracking of almost any image.'
 tags: AR NFT 2020 Augmented-Reality jsartoolkit5 markerless
 ---
-{% include figure.html width="1500" caption="Screenshot  with the pinball.jpg image." height="750" alt="NFT Natural Feature Tracking markerless jsartoolkit5" name="NFT-jsartoolkit5" target="_self" title="NFT a Markerless ttechnology with jsartoolkit5" rel="author" jpg_id="554de6fd-e32f-4901-90f8-68c31f60e8f1" link="#" webp_id="499fec07-8fbd-4cff-85ae-4dc0ff26bbaa" %}
+{% include figure.html width="1500" caption="Screenshot  with the pinball.jpg image." height="750" alt="NFT Natural Feature Tracking markerless jsartoolkit5" name="NFT-jsartoolkit5" target="_self" title="NFT a Markerless technology with jsartoolkit5" rel="author" jpg_id="554de6fd-e32f-4901-90f8-68c31f60e8f1" link="#" webp_id="499fec07-8fbd-4cff-85ae-4dc0ff26bbaa" %}
 
 ## The new version of Jsartoolkit5 with NFT
 
 ### NFT or Natural Feature Tracking
 
- **NFT**  ( **N**atural  **F**eature  **T**racking) technology is a new technological option available in the open source project  **Jsartoolkit5** . It is a **Markerless**  technology that allows the tracking of any image (or almost) in spite of the technology with  **Marker**  which provides or the use of  **white / black geometric Patterns**  only (but you can also use colored as long as mono color and highly contrasted) or **Barcode**  that is an array of binary values in the form of black or white squares. Both Barcode or Pattern, in the Artoolkit5 project, must necessarily be surrounded by a dark frame (preferably black), and it is even possible to decide the thickness of this frame, but in any case the marker must necessarily be square in shape. Markerless technologies instead leave more freedom for Augmented Reality applications.
+ **NFT**  ( **N**atural  **F**eature  **T**racking) technology is a new technological option available in the open source project  **Jsartoolkit5**. It is a **Markerless**  technology that allows the tracking of any image (or almost) in spite of the technology with  **Marker**  which provides or the use of only white / black geometric **Patterns**  (but you can also use colored as long as mono color and highly contrasted) or **Barcode**  that is an array of binary values in the form of black or white squares. Both Barcode or Pattern, in the Artoolkit5 project, must necessarily be surrounded by a dark frame (preferably black), and it is even possible to decide the thickness of this frame, but in any case the marker must necessarily be square in shape. Markerless technologies instead leave more freedom for Augmented Reality applications.
 
 ### What is markerless NFT technology
 
