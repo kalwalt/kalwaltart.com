@@ -38,7 +38,7 @@ Images to be used with NFT must have a reasonable  **degree of detail**  and  **
 
 instead the following image is not very suitable for NFT:
 
-{% include figure.html width="1732" caption="Un esempio di immagine n example image not suitable for NFT" height="1080" alt="minimal image" name="1732px-Wavy_Green_Field_in_Minimalist_Style" target="_blank" title="minimal landscape" rel="author" jpg_id="06bc7f87-6f84-43e3-89c8-dd8d43186aaf" wepb_id="d26874c2-383b-4b58-ba61-a385831fa337" link="https://commons.wikimedia.org/wiki/File:Wavy_Green_Field_in_Minimalist_Style.jpg#/media/File:Wavy_Green_Field_in_Minimalist_Style.jpg" webp_id="d26874c2-383b-4b58-ba61-a385831fa337" %}
+{% include figure.html width="1732" caption="Un esempio di immagine n example image not suitable for NFT" height="1080" alt="A minimal image" name="1732px-Wavy_Green_Field_in_Minimalist_Style" target="_blank" title="minimal landscape" rel="author" jpg_id="06bc7f87-6f84-43e3-89c8-dd8d43186aaf" wepb_id="d26874c2-383b-4b58-ba61-a385831fa337" link="https://commons.wikimedia.org/wiki/File:Wavy_Green_Field_in_Minimalist_Style.jpg#/media/File:Wavy_Green_Field_in_Minimalist_Style.jpg" webp_id="d26874c2-383b-4b58-ba61-a385831fa337" %}
 
 The image above is not ideal for NFT since, even if it has a good resolution it has little variance. The result will be lower than the example above and consequently the application will struggle to trace the image.
 
