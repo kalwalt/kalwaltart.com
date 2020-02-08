@@ -18,6 +18,9 @@ intro_paragraph: >-
   ArStudio is a new tool being developed for creatives and programmers
   interested in augmented reality. Based on the https://webglstudio.org will
   allow you to easily create javascript applications.
+tags: >-
+  2020 arStudio webglstudio Augmented-Reality AR Artoolkit NFT jsartoolkit5  
+  markerless
 ---
 {% include figure.html width="1366" caption="ArStudio entry screen." height="768" alt="arStudio a javascript editor for Augmented Reality" name="arStudio-javascript-augmented-reality-editor" target="_blank" title="arStudio an innovative editor for Augmented REality" rel="author" jpg_id="641dbcae-4b8a-48b1-9020-8441f1c28ba2" link="https://github.com/augmentmy-world/arStudio" webp_id="f18071fc-d83e-4a69-acf5-6949e8928698" %}
 
