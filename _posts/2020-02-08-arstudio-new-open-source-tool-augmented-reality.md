@@ -28,7 +28,7 @@ Developing an augmented reality application can be a difficult task. There are s
 
 ### Features of webglstudio.
 
-**Webglstudio**  is not a program for creating 3d objects like Blender, 3dSmax or Maya, it is rather an editor for transforming 3d scenes into interactive web applications. It consists of several windows and functions, it is together a scene editor, an editor for scripting code (Js and GLSL) and an editor for "graphs" as many other software are provided. But the most important thing is that when you decide that your project is finished, you can publish it directly as html and javascript code, just with a click of a mouse. The properties of this editor, however, are not limited to what I have listed but go far beyond expectations. I recommend you visit the demo page to get an idea.
+**Webglstudio** is not a program for creating 3d objects like Blender, 3dSmax or Maya, it is rather an editor for transforming 3d scenes into interactive web applications. It consists of several windows and functions, it is together a scene editor, an editor for scripting code (Js and GLSL) and an editor for "graphs" as many other software are provided. But the most important thing is that when you decide that your project is finished, you can publish it directly as html and javascript code, just with a click of a mouse. The properties of this editor, however, are not limited to what I have listed but go far beyond expectations. I recommend you visit the demo page to get an idea.
 
 {% include figure.html width="1366" caption="arStudio with an arTracker and a cube in the scene" height="768" alt="arStudio javascript editor test" name="arStudio-javascript-editor-AR-testing" target="_blank" title="arStudio " rel="author" jpg_id="84a75c2e-f972-4f89-b5fb-0f6d92e0eb82" link="https://github.com/augmentmy-world/arStudio" webp_id="0be2deec-80d9-4833-8614-8469f12fe39b" %}
 
@@ -40,7 +40,7 @@ What will **arStudio** do? It will be possible with very little effort to develo
 * **Barcode markers** 
 * **NFT markers**  (Pinball image only)
 
-There is still a lot to do but the future is promising for this project, not free from bugs and other problems at the moment, but we are very confident and convinced that we will be able to improve it more and more. If you want to test the editor go to the github page of [arStudio](https://github.com/augmentmy-world/arStudio), you can download the zip file or clone the project with  **git**  by running this command in a terminal console:
+There is still a lot to do but the future for this project is promising, it is not free from bugs and other problems at the moment, but we are very confident and convinced that we will be able to improve it more and more. If you want to test the editor, go to the github page of [arStudio](https://github.com/augmentmy-world/arStudio), you can download the zip file or clone the project with  **git**  by running this command in a terminal console:
 
 ```
 git clone https://github.com/augmentmy-world/arStudio.git
