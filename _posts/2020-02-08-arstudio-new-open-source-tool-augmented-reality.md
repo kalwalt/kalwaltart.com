@@ -1,7 +1,7 @@
 ---
 layout: post
 idx: 25
-title: arstudio new open source tool augmented reality
+title: arStudio a new open source tool for augmented reality creatives
 description: >-
   arStudio is a developing editor for building applications in javascript for
   augmented reality. It is based on https://webglstudio.org and with a few
@@ -37,7 +37,7 @@ Developing an augmented reality application can be a difficult task. There are s
 What will **arStudio** do? It will be possible with very little effort to develop an interactive web application for augmented reality. Without even writing a line of code! At the moment it is possible to add in the scene:
 
 * **Pattern markers**  (Hiro and Kanj)
-* **Barcode markers** 
+* **Barcode markers**
 * **NFT markers**  (Pinball image only)
 
 There is still a lot to do but the future for this project is promising, it is not free from bugs and other problems at the moment, but we are very confident and convinced that we will be able to improve it more and more. If you want to test the editor, go to the github page of [arStudio](https://github.com/augmentmy-world/arStudio), you can download the zip file or clone the project with  **git**  by running this command in a terminal console:
