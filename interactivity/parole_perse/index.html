@@ -73,10 +73,10 @@ meta-name: false
 		onResize()
 	})
 	function onResize(){
-		arToolkitSource.onResize()
-		arToolkitSource.copySizeTo(renderer.domElement)
+		arToolkitSource.onResizeElement()
+		arToolkitSource.copyElementSizeTo(renderer.domElement)
 		if( arToolkitContext.arController !== null ){
-			arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
+			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)
 		}
 	}
 	////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +117,7 @@ meta-name: false
   var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerGroupSX, {
 		type : 'pattern',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../resources/data/pois-sx.patt',
-		patternUrl : '../resources/data/pois-sx.patt',
+		patternUrl : '../../resources/data/pois-sx.patt',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix',
 	})

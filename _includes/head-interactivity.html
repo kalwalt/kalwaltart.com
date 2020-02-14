@@ -1,5 +1,6 @@
 <head>
 	<title>{{ page.title }}</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<!-- link to main stylesheet -->
 	<link rel="stylesheet" type="text/css" href="../../resources/css/main.css">
 {% include cookieconsent.html %}
@@ -18,6 +19,11 @@
       <script src="../../resources/ar.min.js"></script>
       <script src="../../resources/js/renderers/CanvasRenderer.js"></script>
       <script src="../../resources/js/renderers/WebGL.js"></script>
+		{% when "Glif 01" %}
+	     <script src="../../resources/ar.min.js"></script>
+			 <script src='../../resources/three-r103.min.js'></script>
+	     <script src="../../resources/js/renderers/CanvasRenderer.js"></script>
+	     <script src="../../resources/js/renderers/WebGL.js"></script>
     {% when "Ideogramma AR01" %}
       <script src="../../resources/ar.min.js"></script>
       <script src="../../resources/js/renderers/CanvasRenderer.js"></script>

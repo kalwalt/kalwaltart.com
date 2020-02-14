@@ -546,6 +546,10 @@ body {
   }
 }
 
+.highlighter-rouge .highlight {
+  display: grid;
+  max-width: 700px;
+}
 
 pre,
 code {
@@ -556,7 +560,13 @@ code {
 }
 
 code {
+  font-size: x-small;
+  //max-width: 700px;
   padding: 1px 5px;
+  @include box-sizing(border-box);
+  @include respond-to(800) {
+    padding: 0 $rs * 1;
+  }
 }
 
 pre {
