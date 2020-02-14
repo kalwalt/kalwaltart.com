@@ -14,6 +14,10 @@ media_library:
   config:
     publicKey: UPLOADCARE_KEY
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 collections: # A list of collections the CMS should be able to edit
   # POSTS
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -22,8 +26,6 @@ collections: # A list of collections the CMS should be able to edit
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
-      encoding: "ascii"
-      clean_accents: true
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "idx", name: "idx", widget: "number"}
