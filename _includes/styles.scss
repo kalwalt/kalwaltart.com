@@ -614,11 +614,23 @@ amp-user-notification > div {
 }
 
 .patreon-button{
-  background-color: orange;
-  color: #333333;
-  border-radius: 20%;
-  padding: 6px;
+  background-color: rgb(232, 91, 70);;
+  color: rgb(255, 255, 255) !important;
+  //border-radius: 20%;
+  //padding: 6px;
   text-decoration-line: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(232, 91, 70);
+  border-image: initial;
+  padding: 0.46875rem 1rem;
 }
 
 .container-form{
