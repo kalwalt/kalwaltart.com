@@ -15,8 +15,9 @@ seo:
   type: BlogPosting
 image: path/to/image
 intro_paragraph: >-
-  Patreon is a supportive platform for creatives and researchers from many
-  fields. Discover my page at <https://www.patreon.com/walterperdan> in which i
-  will present contents for Augmented Reality.
+  Patreon is a platform to support creatives and researchers from many fields.
+  Check out my page on <https://www.patreon.com/walterperdan> where I will
+  present the contents for augmented reality.
+tags: 2020 Patreon Augmented-Reality AR NFT jsartoolkit5 markerless
 ---
 
