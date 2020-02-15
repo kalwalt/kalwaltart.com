@@ -2,7 +2,7 @@
 layout: post
 idx: 26
 slug: augmented reality profile on patreon
-title: My patreon profile for the Augmented Reality world
+title: My Patreon profile for the Augmented Reality world and not only.
 description: >-
   Patreon is a platform to support creatives, researcher and inventors. In my
   patreon page i will show free and exclusive contents for Augmented Reality.
@@ -20,4 +20,4 @@ intro_paragraph: >-
   present the contents for augmented reality.
 tags: 2020 Patreon Augmented-Reality AR NFT jsartoolkit5 markerless
 ---
-I recently started managing my personal page on Patreon. Patreon is a platform that let a creator share his work and get support by patrons, supporters which give direct monetary aid at different levels based on own availability.
+I recently started managing my personal page on **Patreon**. [Patreon](https://www.patreon.com/) is a platform that let a creator share his work and get support by patrons, supporters which give direct monetary aid at different levels based on own availability. Visual artists, Illustrators, video makers, singers, musicians are some categories present on **Patreon**.
