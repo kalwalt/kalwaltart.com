@@ -16,7 +16,7 @@ intro_paragraph: >-
   **N**atural **F**eature **T**racking: A Markerless technology for the Augmented Reality.
 categories: Interactive-art
 tags: >-
-  Interactive-art AR Art 2019 Painting Augmented-reality
+  Interactive-art AR Art 2019 Painting Augmented-Reality
 ---
 
 {% include figure.html width="1200" caption="Suono di superficie (Sound surface), acrylic colors on canvas, An example of Markerless AR with the Artivive app, 70x50 cm, 2018." height="844" alt="Suono di superficie (Sound surface) acrylic interactive painting with Artivive by Walter Perdan" name="suono_di_superficie_artivive_acrylic_painting_interactive_art_Walter_Perdan" target="_blank" rel="author" jpg_id="cb9f79fd-d999-4ddd-8532-4655bcc3d756" link="https://www.walterperdan.com" webp_id="67b0703f-a242-496a-98c3-30e5b4243007" %}

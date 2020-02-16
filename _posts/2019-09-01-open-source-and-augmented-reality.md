@@ -16,7 +16,7 @@ intro_paragraph: >-
   The scenario of Augmented Reality in the Open Source world.
 categories: Interactive-art
 tags: >-
-  Interactive-art AR Art 2019 Augmented-reality Artoolkit ArtoolkitX
+  Interactive-art AR Art 2019 Augmented-Reality Artoolkit ArtoolkitX
 ---
 
 {% include figure.html width="1200" caption="Developing ArtoolkitX.js on Atom editor..." height="685" alt="Screenshot on the ArtoolkitX.js development" name="Artoolkitx_inside_atom" target="_blank" title="ArtoolkitX.js an Open Source project for the AR" rel="author" link="https://github.com/kalwalt" jpg_id="b1bac8a4-4e03-4766-9a89-1d3452dd019d" webp_id="1be8cb43-b584-439c-a7a3-72a74e11465f" %}
