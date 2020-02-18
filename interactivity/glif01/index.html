@@ -9,6 +9,18 @@ title: Glif 01
 	<a-assets>
 		<a-asset-item id="glif02" src="../../resources/models/glif01/glTF/glif02.glb"></a-asset-item>
 	</a-assets>
+	<a-assets>
+		<a-asset-item id="glif03" src="../../resources/models/glif01/glTF/glif03.glb"></a-asset-item>
+	</a-assets>
+	<a-assets>
+		<a-asset-item id="glif04" src="../../resources/models/glif01/glTF/glif04.glb"></a-asset-item>
+	</a-assets>
+	<a-assets>
+		<a-asset-item id="glif05" src="../../resources/models/glif01/glTF/glif05.glb"></a-asset-item>
+	</a-assets>
+	<a-assets>
+		<a-asset-item id="glif06" src="../../resources/models/glif01/glTF/glif06.glb"></a-asset-item>
+	</a-assets>
 	<a-marker preset='hiro'>
 		<a-entity id="updateMe" geometry="primitive: icosahedron" position='0 0 0'></a-entity>
 	</a-marker>
@@ -31,25 +43,25 @@ title: Glif 01
 		type='pattern'
 		url='../../resources/data/multi-glif01/pattern-glif01-03.patt'
 	>
-		<a-entity id="updateMe" geometry="primitive: sphere" position='0 0 0'></a-entity>
+		<a-entity id="updateMe" gltf-model="#glif03"></a-entity>
 	</a-marker>
 	<a-marker
 		type='pattern'
 		url='../../resources/data/multi-glif01/pattern-glif01-04.patt'
 	>
-		<a-entity id="updateMe" geometry="primitive: sphere" position='0 0 0'></a-entity>
+		<a-entity id="updateMe" gltf-model="#glif04"></a-entity>
 	</a-marker>
 	<a-marker
 		type='pattern'
 		url='../../resources/data/multi-glif01/pattern-glif01-05.patt'
 	>
-		<a-entity id="updateMe" geometry="primitive: sphere" position='0 0 0'></a-entity>
+		<a-entity id="updateMe" gltf-model="#glif05"></a-entity>
 	</a-marker>
 	<a-marker
 		type='pattern'
 		url='../../resources/data/multi-glif01/pattern-glif01-06.patt'
 	>
-		<a-entity id="updateMe" geometry="primitive: sphere" position='0 0 0'></a-entity>
+		<a-entity id="updateMe" gltf-model="#glif06"></a-entity>
 	</a-marker>
 	<a-entity camera> </a-entity>
 </a-scene>
