@@ -15,7 +15,7 @@ image: 'https://ucarecdn.com/5e541b7f-4561-45b6-9a10-dc432fb350e4/Art_is_a_joke_
 intro_paragraph: >-
   Some news related to interactive art, web design and programming world. Using the jekyll-responsive-image plugin...
 categories: Interactive-art
-tags: Interactive-art AR Artoolikt ArtooliktX NFT Gatsbyjs React Uploadcare 2019
+tags: Interactive-art AR Artoolkit ArtoolkitX NFT Gatsbyjs React Uploadcare 2019
 ---
 ## Improvements: migrating to uploadcare and other news.
 

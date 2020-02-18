@@ -20,7 +20,7 @@ intro_paragraph: >-
 categories: Interactive-art
 tags: >-
   Glitch Glitch-art Noise Noise-art Interactive-art AR Art 2019 Painting Acrylic
-  Augmented-reality
+  Augmented-Reality
 ---
 {% include figure.html width="1500" caption="Noise noise, acrylic color on canvas, 70 x 50 cm, 2019." height="1125" alt="Noise noise interactive art with augmented reality by Walter Perdan - Kalwalt" name="noise_noise_augmented_reality_art_kalwalt" target="_blank" title="Noise noise, interactive art with augmented reality." rel="author" jpg_id="79594958-f64c-4e87-930c-38140148884a" link="https://www.kalwaltart.com/interactivity/noise_noise" webp_id="543ae1b0-e8a0-4f96-ac7e-eff0dc2b46e3" %}
 

@@ -14,6 +14,10 @@ media_library:
   config:
     publicKey: UPLOADCARE_KEY
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 collections: # A list of collections the CMS should be able to edit
   # POSTS
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -21,10 +25,11 @@ collections: # A list of collections the CMS should be able to edit
     folder: "_posts" # The path to the folder where the documents are stored
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "idx", name: "idx", widget: "number"}
+      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Description", name: "description", widget: "text"}
       - label: "Author"
@@ -50,7 +55,7 @@ collections: # A list of collections the CMS should be able to edit
             options:
               - { label: "Walter Perdan", value: "Walter Perdan" }
           - {label: "Date_Published", name: "datePublished", widget: "date"}
-      - {label: "Image_path", name: "image", widget: "file"}
+      - {label: "Image_path", name: "image", widget: "string"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Categories", name: "categories", widget: "string", required: false}

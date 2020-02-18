@@ -546,6 +546,10 @@ body {
   }
 }
 
+.highlighter-rouge .highlight {
+  display: grid;
+  max-width: 700px;
+}
 
 pre,
 code {
@@ -556,7 +560,13 @@ code {
 }
 
 code {
+  font-size: x-small;
+  //max-width: 700px;
   padding: 1px 5px;
+  @include box-sizing(border-box);
+  @include respond-to(800) {
+    padding: 0 $rs * 1;
+  }
 }
 
 pre {
@@ -611,6 +621,34 @@ amp-user-notification > div {
 
 .social-tab{
   text-align: center;
+}
+
+.patreon-box{
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto 12px auto;
+  @include box-sizing(border-box);
+  @include respond-to(800) {
+    padding: 0 $rs * 1;
+  }
+}
+
+.patreon-button{
+  background-color: rgb(232, 91, 70);;
+  color: rgb(255, 255, 255) !important;
+  text-decoration-line: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(232, 91, 70);
+  border-image: initial;
+  padding: 0.46875rem 1rem;
 }
 
 .container-form{
