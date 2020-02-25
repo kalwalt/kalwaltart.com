@@ -2,7 +2,7 @@
 layout: post
 idx: 27
 slug: 'tutorial create marker NFT'
-title: 'Tutorial: how to create an NFT marker.'
+title: 'Tutorial: how to create a NFT marker.'
 description: >-
    In this tutorial article we will explain how to make an NFT marker for augmented reality with the NFT-Marker-Creator to use with the opensource project jsartoolkit5.
 author: Walter Perdan
@@ -22,9 +22,9 @@ tags: 2020 Augmented-Reality NFT markerless tutorial
 
 ### Introduction
 
-In this tutorial I will explain step by step the creation of **NFT** markers for use with the **jsartoolkit5** project for augmented reality. This article is intended for all creators who want to create their augmented reality web applications. A minimum knowledge of some concepts is however necessary to face the topic.
+In this tutorial I will explain the step by step creation of **NFT** markers to use with the **jsartoolkit5** augmented reality project. This article is intended for all creators who want to create their augmented reality web applications. A minimum knowledge of some concepts is however necessary to face the topic.
 
-**NFT** (**N** atural **F** eature **T** racking) markers are markers that are used to trace predetermined images. In essence it is a markerless technology, that is, without the use of markers. For a distinction on the types of markers I refer you to this [article](https://www.kalwaltart.it/blog/2020/01/19/nft-natural-feature-tracking-con-jsartoolkit5/) and at the bottom you will find other useful resources.
+**NFT** (**N**atural **F**eature **T**racking) markers are markers that are used to trace predetermined images. In essence it is a markerless technology, that is, without the use of markers. For a distinction on the types of markers I refer you to this [article](https://www.kalwaltart.it/blog/2020/01/19/nft-natural-feature-tracking-con-jsartoolkit5/) and at the bottom you will find other useful resources.
 
 ### Materials needed
 
