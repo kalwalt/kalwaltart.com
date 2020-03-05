@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+{% include head-interactivity-nft.html %}
+
+<body class="loading">
+	<div id="loading" >
+			<img  src="../../assets/icons/icon-96x96.png"/>
+			<span class="loading-text">Loading, please wait</span>
+	</div>
+
+	<!--
+  ==================
+  STATS
+  ==================
+  -->
+
+      <div id="stats" class="ui stats">
+
+          <div id="stats1" class="stats-item">
+              <p class="stats-item-title">
+                  Main
+              </p>
+          </div>
+
+          <div id="stats2" class="stats-item">
+              <p class="stats-item-title">
+                  Worker
+              </p>
+          </div>
+
+      </div>
+
+  <!--
+  ==================
+  CAMERA VIDEO & CANVAS
+  ==================
+  -->
+
+      <div id="app">
+          <video
+              loop
+              autoplay
+              muted
+              playsinline
+              id="video">
+          </video>
+
+          <canvas id="canvas"></canvas>
+      </div>
+
+		{{ content }}
+
+
+</body>
+
+</html>
