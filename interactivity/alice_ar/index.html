@@ -1,14 +1,17 @@
 ---
 layout: interactivity-nft
 title: Alice_AR
+stats: false
 ---
-
-<script src="../../resources/js/stats.min.js"></script>
+{% if page.stats == true %}
+  <script src="../../resources/js/stats.min.js"></script>
+{% endif %}
 <script src="../../resources/three-r103.min.js"></script>
 <script src="../../resources/workers/Alice_AR_wasm_worker.js"></script>
 
 <script>
 
+{% if page.stats == true %}
 /**
  * STATS
  */
@@ -19,6 +22,7 @@ document.getElementById( 'stats1' ).appendChild( statsMain.dom );
 var statsWorker = new Stats();
 statsWorker.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
 document.getElementById( 'stats2' ).appendChild( statsWorker.dom );
+{% endif %}
 
 /**
  * APP / ELEMENTS
@@ -69,13 +73,17 @@ var canvas = document.getElementById( 'canvas' );
 									video.videoWidth,
 									video.videoHeight,
 									canvas,
+									{% if page.stats == true %}
 									function() {
 											statsMain.update()
 									},
 									function() {
 											statsWorker.update();
-									},
-									null
+									}
+									{% else %}
+									function() {},
+									function() {}
+									{% endif %}
 							);
 					} );
 			} );
