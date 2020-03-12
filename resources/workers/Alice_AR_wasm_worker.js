@@ -44,7 +44,10 @@ var setMatrix = function (matrix, value) {
         matrix.elements = [].slice.call(array);
     }
 };
-var texture = new THREE.TextureLoader().load( '../../resources/data/textures/aframe-k.png' );
+
+var textureBlue = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_blue.png' );
+var texturePurple = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_purple.png' );
+var textureYellow = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_yellow.png');
 
 //var worker;
 function start(container, marker, video, input_width, input_height, canvas_draw, render_update, track_update) {
@@ -82,16 +85,26 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     var root = new THREE.Object3D();
     scene.add(root);
 
-    var mat = new THREE.MeshLambertMaterial({color: 0xbbbbff, map: texture});
-    var planeGeom = new THREE.PlaneGeometry(1,1,1,1);
-    var plane = new THREE.Mesh(planeGeom, mat);
-  	plane.position.z = 0;
-  	plane.position.x = 90;
-  	plane.position.y = 90;
-  	plane.scale.set(180,180,180);
+    bitmap(textureBlue, 0);
+    bitmap(texturePurple, 10);
+    bitmap(textureYellow, 20);
 
-    root.matrixAutoUpdate = false;
-    root.add(plane);
+function bitmap(tex, z) {
+  let mat = new THREE.MeshLambertMaterial({
+    color: 0xbbbbbb,
+    map: tex,
+    side: THREE.DoubleSide
+  });
+  let planeGeom = new THREE.PlaneGeometry(1, 1, 1, 1);
+  let plane = new THREE.Mesh(planeGeom, mat);
+  plane.position.z = z;
+  plane.position.x = 90;
+  plane.position.y = 90;
+  plane.scale.set(180, 180, 180);
+  root.matrixAutoUpdate = false;
+  root.add(plane);
+}
+
 
     var load = function() {
         vw = input_width;
