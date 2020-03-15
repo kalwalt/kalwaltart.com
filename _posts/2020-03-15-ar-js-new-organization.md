@@ -22,11 +22,11 @@ tags: 2020 Augmented-Reality Artoolkit5 jsartolkit5 NFT markerless AR.js-org
 ---
 {% include figure.html width="1299" caption="Discover the new AR.js org!" height="741" alt="Ar.js new github organization" name="ar_js_org_introduction" target="_blank" title="AR.js as github org" rel="author" jpg_id="2d7fac12-ca25-46dd-a6ba-497560a30e33" link="https://github.com/AR-js-org" webp_id="6e60f782-d54c-4d4b-9995-9def4f01ac5e" %}
 
-**AR.js** has reached a remarkable milestone, which in fact leads it to be one of the most important opensource projects for Augmented Reality: the first most noteworthy thing is that it has become an organization on [github](https://ar-js-org.github.io/), second but not least it has reached the version 3.0.0 with integrated **NFT** (Natural Feature Tracking) technology. AR.js is a project started by Jerome Etienne and maintained by Nicolò Carpignoli. The transformation into an organization will allow better management of the code and all aspects of an Open Source project.
+**AR.js** has reached a remarkable milestone, which in fact leads it to be one of the most important Open Source projects for Augmented Reality: the first most noteworthy thing is that it has become an organization on [github](https://ar-js-org.github.io/), second but not least it has reached the version 3.0.0 with integrated **NFT** (Natural Feature Tracking) technology. AR.js is a project started by [Jerome Etienne](https://github.com/jeromeetienne) and maintained by [Nicolò Carpignoli](https://github.com/nicolocarpignoli). The transformation into an organization will allow better management of the code and all aspects of an Open Source project.
 
 ## What is AR.js?
 
-**Ar.js** is a library entirely written in javascript for the creation of Web Apps for Augmented Reality (hereafter **AR**). It is based internally on jsartolkit5, the javascript port of Artoolkit5 the well-known AR project. I will not go into detail on the code parts, I will only tell you that three types of AR are currently possible:
+**Ar.js** is a library entirely written in javascript for the creation of Web Apps for Augmented Reality (hereafter **AR**). It is based internally on jsartolkit5, the javascript port of [Artoolkit5](https://github.com/artoolkitx/artoolkit5) the well-known AR project. I will not go into detail on the code parts, I will only tell you that three types of AR are currently possible:
 
 * Image Tracking
 * Location Based AR
@@ -38,8 +38,8 @@ tags: 2020 Augmented-Reality Artoolkit5 jsartolkit5 NFT markerless AR.js-org
 
 ## New organization, new documentation.
 
-A fundamental aspect of a project is its documentation. What is a code library if you don't know how to use it? Writing good documentation is an important part of the project, therefore an official Ar.js documentation has been created in this github repository and available online at this address. We believe that good documentation is a strong point of every open source project, so we will try to improve it more and more. If you intend to contribute to the project, help us improve it, join us.
+A fundamental aspect of a project is its documentation. What is a code library if you don't know how to use it? Writing good documentation is an important part of the project, therefore an official Ar.js documentation has been created in this github repository and available online at this address: [ar-js-org.github.io/AR.js-Docs](https://ar-js-org.github.io/AR.js-Docs/). We believe that good documentation is a strong point of every open source project, so we will try to improve it more and more. If you intend to contribute to the project, help us improve it, join us.
 
 {% include figure.html width="1299" caption="Visit the documentation page at https://ar-js-org.github.io/AR.js-Docs/" height="741" alt="AR.js documentation page" name="ar_js_org_documentation_page" target="_blank" title="AR.js-Docs" rel="author" jpg_id="510f2285-6a67-4212-ba1d-e8cac35bc08e" link="https://ar-js-org.github.io/AR.js-Docs/" webp_id="b1572ac2-d950-4069-b5f9-e92f7f9c621e" %}
 
-In addition, the organization was born for a simple reason: we did not want to see such a beautiful project die, and we think collaboration is an important part of the opensoucre: what incredible goals can we achieve together if everyone starts to collaborate and make their own contribution? In our opinion AR.js and the new organization will have a glorious future and will be the promoter of important and incredible projects!
+In addition, the organization was born for a simple reason: we did not want to see such a beautiful project die, and we think collaboration is an important part of the opensource: what incredible goals can we achieve together if everyone starts to collaborate and make their own contribution? In our opinion AR.js and the new organization will have a glorious future and will be the promoter of important and incredible projects!
