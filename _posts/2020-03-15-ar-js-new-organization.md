@@ -34,7 +34,7 @@ tags: 2020 Augmented-Reality Artoolkit5 jsartolkit5 NFT markerless AR.js-org
 
 **Image Tracking**  is a Markerless technology i.e. without the use of Pattern Marker. This is possible thanks to the recent implementation of NFT (Natural Feature Tracking) within jsartoolkit5. The advantages are the use of almost any image and greater freedom. But beware this is a newly implemented feature and need for improvements. **Location Based** is AR that can be positioned in a place, thanks to GPS data. This allows you to position any 3D or other object in the scene. **Marker Tracking** is the most traditional AR, which makes use of necessarily square Pattern Markers with a border of a certain thickness and uniform color (usually black or white). The main advantage of using AR.js lies in the fact that once the code is written it is immediately usable, it is sufficient to place it on a Server: it is only a page written in HTML, javascript and CSS.
 
-{% include figure.html className="" width="1299" caption="NFT tracking with jsartoolkit5 the core of AR.js!" height="741" alt="NFT tracking jsartoolkit5" name="NFTjsartoolkit5.jpeg" target="_blank" title="NFT the new feature inside AR.js" rel="author" jpg_id="554de6fd-e32f-4901-90f8-68c31f60e8f1" link="https://ar-js-org.github.io/AR.js/aframe/examples/image-tracking/nft/" webp_id="499fec07-8fbd-4cff-85ae-4dc0ff26bbaa" %}
+{% include figure.html className="" width="1299" caption="NFT tracking with jsartoolkit5 the core of AR.js!" height="741" alt="NFT tracking jsartoolkit5" name="NFTjsartoolkit5" target="_blank" title="NFT the new feature inside AR.js" rel="author" jpg_id="554de6fd-e32f-4901-90f8-68c31f60e8f1" link="https://ar-js-org.github.io/AR.js/aframe/examples/image-tracking/nft/" webp_id="499fec07-8fbd-4cff-85ae-4dc0ff26bbaa" %}
 
 ## New organization, new documentation.
 
@@ -43,3 +43,13 @@ A fundamental aspect of a project is its documentation. What is a code library i
 {% include figure.html width="1299" caption="Visit the documentation page at https://ar-js-org.github.io/AR.js-Docs/" height="741" alt="AR.js documentation page" name="ar_js_org_documentation_page" target="_blank" title="AR.js-Docs" rel="author" jpg_id="510f2285-6a67-4212-ba1d-e8cac35bc08e" link="https://ar-js-org.github.io/AR.js-Docs/" webp_id="b1572ac2-d950-4069-b5f9-e92f7f9c621e" %}
 
 In addition, the organization was born for a simple reason: we did not want to see such a beautiful project die, and we think collaboration is an important part of the opensource: what incredible goals can we achieve together if everyone starts to collaborate and make their own contribution? In our opinion AR.js and the new organization will have a glorious future and will be the promoter of important and incredible projects!
+
+### Useful links:
+
+AR.js organization: [https://github.com/AR-js-org](https://github.com/AR-js-org/AR.js)
+
+AR.js: <https://github.com/AR-js-org/AR.js>
+
+AR.js Documentation: <https://ar-js-org.github.io/AR.js-Docs/> github repository <https://github.com/AR-js-org/AR.js-Docs>
+
+My blog article about NFT (Natural Feature Tracking): <https://www.kalwaltart.com/blog/2020/01/21/nft-natural-feature-tracking-with-jsartoolkit5/>
