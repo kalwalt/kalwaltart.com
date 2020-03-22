@@ -68,7 +68,7 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     var renderer = new THREE.WebGLRenderer({
       canvas: canvas_draw,
       alpha: true,
-      logarithmicDepthBuffer: true,
+      // logarithmicDepthBuffer: true,
       antialias: true});
     renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -88,20 +88,25 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     /* Load Model */
     var threeGLTFLoader = new THREE.GLTF2Loader();
 
-    threeGLTFLoader.load("../../resources/models/alice_ar/Alice_AR_texBuff.glb", function (gltf) {
+    threeGLTFLoader.load("../../resources/models/alice_ar/Alice_AR.glb", function (gltf) {
 
             model = gltf.scene;
-            model.rotation.x = Math.PI/2;
+            model.rotation.y = -Math.PI/2;
             model.position.z = 0;
             model.position.x = 100;
-            model.position.y = 100;
-            model.scale.set(50,50,50);
+            model.position.y = 50;
+            model.scale.set(20,20,20);
+
+            gltf.animations.duration = 2;
+						var mixer = new THREE.AnimationMixer( model );
+						mixers.push( mixer );
+						var action = mixer.clipAction( gltf.animations[0] );
+						action.play();
 
             root.matrixAutoUpdate = false;
             root.add(model);
         }
     );
-
 
     var load = function() {
         vw = input_width;
@@ -232,6 +237,12 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     var tick = function() {
         draw();
         requestAnimationFrame(tick);
+
+        if (mixers.length > 0) {
+                    for (var i = 0; i < mixers.length; i++) {
+                        mixers[i].update(clock.getDelta());
+                    }
+                }
     };
 
     load();
