@@ -45,10 +45,6 @@ var setMatrix = function (matrix, value) {
     }
 };
 
-var textureBlue = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_blue.png' );
-var texturePurple = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_purple.png' );
-var textureYellow = new THREE.TextureLoader().load( '../../resources/data/textures/aliceAR/aliceAR_yellow.png');
-
 //var worker;
 function start(container, marker, video, input_width, input_height, canvas_draw, render_update, track_update) {
     worker = new Worker('../../../resources/wasm_worker/artoolkit.wasm_worker.js');
@@ -69,7 +65,11 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     var canvas_process = document.createElement('canvas');
     var context_process = canvas_process.getContext('2d');
 
-    var renderer = new THREE.WebGLRenderer({canvas: canvas_draw, alpha: true, antialias: true});
+    var renderer = new THREE.WebGLRenderer({
+      canvas: canvas_draw,
+      alpha: true,
+      logarithmicDepthBuffer: true,
+      antialias: true});
     renderer.setPixelRatio(window.devicePixelRatio);
 
     var scene = new THREE.Scene();
@@ -85,25 +85,22 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
     var root = new THREE.Object3D();
     scene.add(root);
 
-    bitmap(textureBlue, 0);
-    bitmap(texturePurple, 10);
-    bitmap(textureYellow, 20);
+    /* Load Model */
+    var threeGLTFLoader = new THREE.GLTF2Loader();
 
-function bitmap(tex, z) {
-  let mat = new THREE.MeshLambertMaterial({
-    color: 0xbbbbbb,
-    map: tex,
-    side: THREE.DoubleSide
-  });
-  let planeGeom = new THREE.PlaneGeometry(1, 1, 1, 1);
-  let plane = new THREE.Mesh(planeGeom, mat);
-  plane.position.z = z;
-  plane.position.x = 90;
-  plane.position.y = 90;
-  plane.scale.set(180, 180, 180);
-  root.matrixAutoUpdate = false;
-  root.add(plane);
-}
+    threeGLTFLoader.load("../../resources/models/alice_ar/Alice_AR_texBuff.glb", function (gltf) {
+
+            model = gltf.scene;
+            model.rotation.x = Math.PI/2;
+            model.position.z = 0;
+            model.position.x = 100;
+            model.position.y = 100;
+            model.scale.set(50,50,50);
+
+            root.matrixAutoUpdate = false;
+            root.add(model);
+        }
+    );
 
 
     var load = function() {
