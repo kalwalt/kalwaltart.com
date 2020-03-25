@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+{% include head-interactivity-nft.html %}
+
+<body class="loading">
+	<div id="loading" >
+			<img  src="../../resources/textures/logo-anim.gif"/>
+			<span class="loading-text">Loading, please wait</span>
+	</div>
+{% if page.stats == true %}
+  {% include stats.html %}
+{% endif %}
+
+  <!--
+  ==================
+  CAMERA VIDEO & CANVAS
+  ==================
+  -->
+
+      <div id="app">
+          <video
+              loop
+              autoplay
+              muted
+              playsinline
+              id="video">
+          </video>
+
+          <canvas id="canvas"></canvas>
+      </div>
+
+		{{ content }}
+
+
+</body>
+
+</html>

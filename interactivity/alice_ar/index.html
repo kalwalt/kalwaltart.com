@@ -1,0 +1,93 @@
+---
+layout: interactivity-nft
+title: Alice_AR
+stats: false
+---
+{% if page.stats == true %}
+  <script src="../../resources/js/stats.min.js"></script>
+{% endif %}
+<script src="../../resources/three-r103.min.js"></script>
+<script src="../../resources/js/loaders/GLTF2Loader.js"></script>
+
+<script src="../../resources/workers/Alice_AR_wasm_worker.js"></script>
+
+<script>
+
+{% if page.stats == true %}
+/**
+ * STATS
+ */
+var statsMain = new Stats();
+statsMain.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.getElementById( 'stats1' ).appendChild( statsMain.dom );
+
+var statsWorker = new Stats();
+statsWorker.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.getElementById( 'stats2' ).appendChild( statsWorker.dom );
+{% endif %}
+
+/**
+ * APP / ELEMENTS
+ */
+var container = document.getElementById( 'app' );
+var video = document.getElementById( 'video' );
+var canvas = document.getElementById( 'canvas' );
+
+/**
+ * APP / VIDEO STREAM
+ */
+
+		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			var hint = {
+					audio: false,
+					video: true
+			};
+			if( window.innerWidth < 800 ) {
+					var width = ( window.innerWidth < window.innerHeight ) ? 480 : 640;
+					var height = ( window.innerWidth < window.innerHeight ) ? 480 : 640;
+
+					var aspectRatio = window.innerWidth / window.innerHeight;
+
+					console.log( width, height );
+
+					hint = {
+							audio: false,
+							video: {
+									facingMode: 'environment',
+									width: { min: width, max: width }
+							},
+					};
+
+					console.log( hint );
+			}
+
+			navigator.mediaDevices.getUserMedia( hint ).then( function( stream ) {
+					video.srcObject = stream;
+					video.addEventListener( 'loadedmetadata', function() {
+							video.play();
+
+							console.log( 'video', video, video.videoWidth, video.videoHeight );
+
+							start(
+									container,
+									markers['Alice_AR'],
+									video,
+									video.videoWidth,
+									video.videoHeight,
+									canvas,
+									{% if page.stats == true %}
+									function() {
+											statsMain.update()
+									},
+									function() {
+											statsWorker.update();
+									}
+									{% else %}
+									function() {},
+									function() {}
+									{% endif %}
+							);
+					} );
+			} );
+	}
+</script>
