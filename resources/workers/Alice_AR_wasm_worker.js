@@ -71,11 +71,23 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
       // logarithmicDepthBuffer: true,
       antialias: true});
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 
     var scene = new THREE.Scene();
 
     var ambientLight = new THREE.AmbientLight( 0xcccccc );
     scene.add( ambientLight );
+
+    var light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+    light.position.set( 0, 1, 0 ); 			//default; light shining from top
+    scene.add( light );
+
+    //Set up shadow properties for the light
+    light.shadow.mapSize.width = 512;  // default
+    light.shadow.mapSize.height = 512; // default
+    light.shadow.camera.near = 0.5;    // default
+    light.shadow.camera.far = 500;     // default
 
     var camera = new THREE.Camera();
     camera.matrixAutoUpdate = false;
@@ -96,6 +108,9 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
             model.position.x = 100;
             model.position.y = 50;
             model.scale.set(20,20,20);
+
+            model.castShadow = true;
+            model.receiveShadow = false; //default
 
             gltf.animations.duration = 2;
 						var mixer = new THREE.AnimationMixer( model );
