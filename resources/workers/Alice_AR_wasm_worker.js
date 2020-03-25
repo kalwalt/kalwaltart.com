@@ -69,6 +69,7 @@ function start2(container, marker, video, input_width, input_height, canvas_draw
       canvas: canvas_draw,
       alpha: true,
       // logarithmicDepthBuffer: true,
+      precision: 'mediump',
       antialias: true});
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.shadowMap.enabled = true;
