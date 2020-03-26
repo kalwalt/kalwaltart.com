@@ -18,3 +18,13 @@
   up_id: b818de60-8630-4dad-bd1b-b528f1870c59
   alt: 'The Tiger never follows the Square abstract painting with augmented reality by Walter Perdan, kalwalt'
   caption: '"The Tiger never follows the Square" acrylic colors on plywood and AR, 70 x 50 cm, 2018.'
+- id: 4
+  name: noise_noise_meta_tag_augmented_reality_walter_perdan
+  up_id: 139e16a1-d8ab-4e42-b3e9-2aad0de06be1
+  alt: '<noise></noise> acryilic painting with interactive art by Walter Perdan'
+  caption: '"<noise></noise>" acryilic colors on canvas and AR, 70 x 50 cm, 2019.'
+- id: 5
+  name: glif_series_AUgmented_reality_marker_walter_perdan
+  up_id: ed21fc9d-5367-40e6-8f69-93f6661bdc00
+  alt: 'Glif series of drawings with Augmented Reality by Walter Perdan'
+  caption: 'Glif series of drawings with markers on paper, 6 x A4, 2019'
