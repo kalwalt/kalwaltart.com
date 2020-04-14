@@ -14,11 +14,13 @@ seo:
   author: Walter Perdan
 image: https://ucarecdn.com/18f403aa-52ce-4035-b418-c5c57794843b/JsartoolkitNFT_kalwalt_augmented_reality.jpg
 intro_paragraph: "JsartoolkitNFT: a light and improved version of Jsartoolkit5"
-tags: 2020 Augmented-Reality AR NFT markerless  Artoolkit jsartookit5
+tags: 2020 Augmented-Reality AR NFT markerless  Artoolkit Artoolkit5 jsartookit5
 ---
 {% include figure.html width="1299" caption="A screenshot of the arNft and jsartoolkitNFT development in the Atom editor" height="741" alt="A screenshot of the arNft development in " name="JsartoolkitNFT_kalwalt_augmented_reality" target="_blank" title="JsartoolkitNFT: simplified version of jsartoolkit5 for NFT" rel="author" jpg_id="18f403aa-52ce-4035-b418-c5c57794843b" link="https://github.com/kalwalt/jsartoolkitNFT" webp_id="01f28032-74e0-423f-bb46-3fb7166e264c" %}
 
 I have recently started the development of a lightened version of **jsartoolkit5** dedicated exclusively to **NFT** (**N**atural **F**eature **T**racking) markers with some improvements. For those who do not know what **NFT** markers are, I invite you to read this other article on my blog: [NFT - Natural Feature Tracking with jsartoolkit5](https://kalwaltart.com/blog/2020/01/21/nft-natural-feature-tracking-with-jsartoolkit5/). I have currently removed all the code that is not necessary trying to leave only what is needed to import the **KPM** library that manages the **NFT** markers. I removed most of the code because it was not used at all for NFT markers, for example the **getUserMedia** and **getUserMediaARController** functions are useless in jsartoolkit5 since the video stream is managed outside the class and inside the WebWorker (artoolkit.worker.js ). I then deleted all the code concerning the Patterns, Barcodes and Multi Markers, because obviously I don't care. What is the idea? To make the code as simple as possible, for this reason I developed an additional level to simplify and help the developer. I created a new **arNFT** library which once initialized allows you to write the code like this:
+
+
 
 ```javascript
 <script src="js/third_party/three.js/three.min.js"></script>
@@ -46,8 +48,8 @@ As you can see it is very simplified, it is based on Three.js but maybe in the f
 
 In summary make this series of features:
 
-* arNFT layer
-* ES6 standard
+* **arNFT** layer
+* **ES6** standard
 * set of functions to be reused for easy development
 * improve performances
 
