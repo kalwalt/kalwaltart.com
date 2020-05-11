@@ -23,7 +23,7 @@ In early May we ( me and Thorsten Bux ) founded a new github organization for th
 
 We are already working on this with **arStudio** see my article: [arStudio a new open source tool for augmented reality](https://www.kalwaltart.com/blog/2020/02/08/arstudio-new-open-source-tool-augmented-reality/). This will become WebarStudio, once finished in Webarkit. If you have read the article you will know that it is based on Webglstudio a new web editor based esclusively on WebGL.
 
-But we don’t want to develop only a Web Editor, we saw that on the AR open source world the most used toolkit for Augmented Reality - **Artoolkit** - is dead, and is successor **ArtoolkitX** is not very friendly to port to javascript with Emscripten. We want bring the best from the two and move on. We want to focus on image tracking ( **NFT** ) and other technologies, like face tracking, hand tracking and planar tracking to name a few. For this reason we don’t intend to be a substitute for **Ar,js**, or a replacement for it. We are moving instead on different basis.
+But we don’t want to develop only a Web Editor, we saw that on the AR open source world the most used toolkit for Augmented Reality - **Artoolkit** - is dead, and is successor **ArtoolkitX** is not very friendly to port to javascript with Emscripten. We want bring the best from the two and move on. We want to focus on image tracking ( **NFT** ) and other technologies, like face tracking, hand tracking and planar tracking to name a few. For this reason we don’t intend to be a substitute for **Ar.js**, or a replacement for it. We are moving instead on different basis.
 
 We have in mind also a new system for image tracking, this probably will be based on **OpencCV**, but if we find another better approach we are happy to change our plans.
 
@@ -32,3 +32,5 @@ For now we have a basic website [webarkit.github.io](https://webarkit.github.io/
 Further news will be released constantly on the Website and on Twitter [@WebarkitO](https://twitter.com/WebarkitO) and other social channels.
 
 If you are a developer and you would like to contribute in some way to the project just send us a message to our twitter account, we will happy to add you and discuss all together about the project.
+
+We think that collaboration is an important key in our lives and open source is a good practice to keep and extends to many fields of human being.
