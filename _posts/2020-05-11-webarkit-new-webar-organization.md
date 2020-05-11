@@ -29,7 +29,7 @@ We have in mind also a new system for image tracking, this probably will be base
 
 For now we have a basic website [webarkit.github.io](https://webarkit.github.io/), with which we will make public news regarding the development of the code and tools. So if you are interested take note of this.
 
-Further news will be released constantly on the Website and on Twitter [@WebarkitO](https://twitter.com/WebarkitO) and other social channels.
+Further news will be released constantly on our website and on Twitter [@WebarkitO](https://twitter.com/WebarkitO) and other social channels.
 
 If you are a developer and you would like to contribute in some way to the project just send us a message to our twitter account, we will happy to add you and discuss all together about the project.
 
