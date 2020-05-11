@@ -17,7 +17,7 @@ image: https://ucarecdn.com/157bb7d7-795d-4bd9-8cb0-931b0eae9517/webarkit_logo_s
 intro_paragraph: A short introduction to webarkit, the new github organization for the WebAR.
 tags: 2020 webarkit webar Augmented-Reality AR Artoolkit ArtoolkitX
 ---
-{% include figure.html width="1280" caption="Webarkit logo" height="638" name="webarkit_logo_social" target="_blank" title="Webarkit: new github org" rel="author" jpg_id="157bb7d7-795d-4bd9-8cb0-931b0eae9517" link="https://github.com/orgs/webarkit" webp_id="a472cf7e-6717-4ac6-a474-92fb09f50f6e" %}
+{% include figure.html width="1280" caption="Webarkit logo" height="638" name="webarkit_logo_social" target="_blank" title="Webarkit: A new github org" rel="author" jpg_id="157bb7d7-795d-4bd9-8cb0-931b0eae9517" link="https://github.com/orgs/webarkit" webp_id="a472cf7e-6717-4ac6-a474-92fb09f50f6e" %}
 
 In early May we ( me and Thorsten Bux ) founded a new github organization for the development of **W**eb **A**ugmented **R**eality solutions. We called **Webarkit** because we think every developers or creatives will use this kit to create the next **WebAR** dimension of making amazing AR. We are just starting but our main goal is to offer a range of tools to help developers and not, to create WebAR with just few clicks of a mouse.
 
