@@ -27,7 +27,7 @@ But we don’t want to develop only a Web Editor, we saw that in the AR open sou
 
 We have in mind also a new system for image tracking, this probably will be based on **OpencCV**, but if we find another better approach we are happy to change our plans.
 
-For now we have a basic website [webarkit.github.io](https://webarkit.github.io/), with which we will make public news regarding the development of the code and tools. So if you are interested take note of this.
+For now we have a basic website [webarkit.github.io](https://www.webarkit.org), with which we will make public news regarding the development of the code and tools. So if you are interested take note of this.
 
 Further news will be released constantly on our website and on Twitter [@WebarkitO](https://twitter.com/WebarkitO) and other social channels.
 
