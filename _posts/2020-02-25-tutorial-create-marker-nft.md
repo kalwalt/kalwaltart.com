@@ -127,7 +127,7 @@ In the end the `confidence level` is also shown as for the web app.
 ### Final conclusions
 
 The easiest way to create your own NFT markers is to use the [Webapp](https://carnaux.github.io/NFT-Marker-Creator/). Or you can take the one present in the [repository](https://github.com/Carnaux/NFT-Marker-Creator/tree/master/docs).
-It is possible also to use the **PWA** app by WebARKit.org go to the [tools page.](https://www.webarkit.org/tools/)
+It is possible also to generate a NFT marker with the **PWA** app by WebARKit.org go to the [tools page.](https://www.webarkit.org/tools/)
 
 It is strongly recommended to generate your own NFT markers with the best possible image in terms of pixels numbers (width and height and therefore total pixels) and dpi:
 
