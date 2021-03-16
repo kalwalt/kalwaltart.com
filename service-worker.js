@@ -27,7 +27,7 @@ self.addEventListener('install', event => {
   event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(urls)));
 });
 
-// use `networkFirst` strategy for `*.html`, like all my posts
+// use `NetworkFirst` strategy for `*.html`, like all my posts
 workbox.routing.registerRoute(/\.html$/, args => {
   return workbox.strategies.NetworkFirst().handle(args).then(response => {
     if (!response) {
@@ -43,13 +43,13 @@ workbox.routing.registerRoute(
     new workbox.strategies.NetworkFirst()
 );
 
-// use `cacheFirst` strategy for images
+// use `CacheFirst` strategy for images
 workbox.routing.registerRoute(
     /assets\/(img|icons)/,
     new workbox.strategies.CacheFirst()
 );
 
-// third party files
+// third party files with StaleWhileRevalidate
 workbox.routing.registerRoute(
     /^https?:\/\/cdn.staticfile.org/,
     new workbox.strategies.StaleWhileRevalidate()
