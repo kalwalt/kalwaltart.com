@@ -20,7 +20,7 @@ group :jekyll_plugins do
   gem 'jekyll-compose'
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
-  gem 'jekyll-amp-pwa-plugin'
+  gem 'jekyll-amp-pwa-plugin', git: 'git@github.com:kalwalt/jekyll-amp-pwa.git', ref: 'fa7c5d5e3b73e4638573bdd66ef952df08a07979'
   gem 'jekyll-tagging'
 
 end

@@ -3,14 +3,14 @@
 // set names for both precache & runtime cache
 workbox.core.setCacheNameDetails({
     prefix: 'my-blog',
-    suffix: 'v1',
+    suffix: 'v1.0',
     precache: 'precache',
     runtime: 'runtime-cache'
 });
 
 // let Service Worker take control of pages ASAP
-workbox.skipWaiting();
-workbox.clientsClaim();
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
 
 // let Workbox handle our precache list
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
 
 // use `networkFirst` strategy for `*.html`, like all my posts
 workbox.routing.registerRoute(/\.html$/, args => {
-  return workbox.strategies.networkFirst().handle(args).then(response => {
+  return workbox.strategies.NetworkFirst().handle(args).then(response => {
     if (!response) {
       return caches.match('offline.html');
     }
@@ -37,18 +37,25 @@ workbox.routing.registerRoute(/\.html$/, args => {
   });
 });
 
+// use `NetworkFirst` strategy for css and js
+workbox.routing.registerRoute(
+    /\.(?:js|css)$/,
+    new workbox.strategies.NetworkFirst()
+);
+
 // use `cacheFirst` strategy for images
 workbox.routing.registerRoute(
-    /\.(?:js|css|png|gif|jpg|svg|json)$/,
-    workbox.strategies.cacheFirst()
+    /assets\/(img|icons)/,
+    new workbox.strategies.CacheFirst()
 );
 
 // third party files
 workbox.routing.registerRoute(
     /^https?:\/\/cdn.staticfile.org/,
-    workbox.strategies.staleWhileRevalidate()
+    new workbox.strategies.StaleWhileRevalidate()
 );
 
-workbox.routing.registerRoute(/(.*)cdn\.ampproject\.org(.*)/,
-  workbox.strategies.staleWhileRevalidate()
+workbox.routing.registerRoute(
+    /(.*)cdn\.ampproject\.org(.*)/,
+    new workbox.strategies.StaleWhileRevalidate()
 );
