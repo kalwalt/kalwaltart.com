@@ -20,7 +20,7 @@ group :jekyll_plugins do
   gem 'jekyll-compose'
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
-  gem 'jekyll-amp-pwa-plugin', '~> 5.1', '>= 5.1.5'
+  gem 'jekyll-amp-pwa-plugin', '~> 5.1', '>= 5.1.6'
   gem 'jekyll-tagging'
 
 end
