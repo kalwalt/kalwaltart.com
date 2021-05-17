@@ -151,6 +151,6 @@ NFT-Marker-Creator wiki: [github.com/Carnaux/NFT-Marker-Creator/wiki](https://gi
 * *web version*
 <a href="https://kalwalt.github.io/artoolkit-docs/3_Marker_Training/marker_nft_training.html" id="a_style">kalwalt.github.io/artoolkit-docs</a>
 * *github repository*
-<a href="(https://github.com/kalwalt/artoolkit-docs" id="a_style">github.com/kalwalt/artoolkit-docs</a>
+<a href="https://github.com/kalwalt/artoolkit-docs" id="a_style">github.com/kalwalt/artoolkit-docs</a>
 
 marker-nft-utilities: <a href="https://github.com/kalwalt/artoolkit-docs/blob/master/3_Marker_Training/marker_nft_utilities.md" id="a_style">github.com/kalwalt/artoolkit-docs/blob/master/3_Marker_Training/marker_nft_utilities.md</a>
