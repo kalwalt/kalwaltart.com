@@ -18,11 +18,6 @@ intro_paragraph: >-
    Tutorial for creating markers **NFT** for Augmented Reality to use with the open source project **jsartoolkit5**.
 tags: 2020 Augmented-Reality NFT markerless tutorial
 ---
-<style>
-#a_style {
-  word-wrap: break-word;
-}
-</style>
 {% include figure.html width="1299" caption="Home screen of the NFT-Marker-Creator webapp" height="741" alt="NFT-Marker-Creator for create NFT markers for Augmented Reality" name="Tutorial_NFT_Marker_Creator_AR" target="_blank" title="Making a NFT Marker with NFT-Marker-Creator" rel="author" jpg_id="3aa158e5-f175-4d74-a3fc-ed54deaea815" link="https://carnaux.github.io/NFT-Marker-Creator/" webp_id="8af1c1d3-7bd4-4bad-8814-ee466692cd06" %}
 
 ### Introduction
