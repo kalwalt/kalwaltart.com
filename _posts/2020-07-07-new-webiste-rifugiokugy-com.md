@@ -1,6 +1,6 @@
 ---
 layout: post
-idx: 30
+idx: 31
 slug: new webiste rifugiokugy.com
 title: The new website for Rifugio Kugy
 description: I created the new website for Rifugio Casa Alpina "Julius Kugy"

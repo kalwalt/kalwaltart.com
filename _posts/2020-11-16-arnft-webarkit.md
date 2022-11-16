@@ -1,6 +1,6 @@
 ---
 layout: post
-idx: 31
+idx: 32
 slug: arnft jsartoolkitnft webarkit
 title: ARnft and JsartoolkitNFT owned by WebAR Kit
 description: During these months i was involved in the development of ARnft and

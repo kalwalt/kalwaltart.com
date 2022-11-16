@@ -1,6 +1,6 @@
 ---
 layout: post
-idx: 24
+idx: 29
 slug: jsartoolkitnft light jsartoolkit5 for nft
 title: "JsartoolkitNFT: a light version of Jsartoolkit5"
 description: "A short article to talk about the new jsartoolkitNFT project: a
