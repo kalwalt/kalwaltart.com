@@ -1,6 +1,6 @@
 ---
 layout: post
-idx: 31
+idx: 32
 slug: webarkit-development
 title: WebARKit development and beyond
 description: Talking about Webarkit and his development in this last period.

@@ -47,7 +47,7 @@
 - id: 23
   name: 'blog/2019/12/11/il-mio-soggiorno-in-francia-presso-lo-studio-orta'
 - id: 24
-  name: 'blog/2020/01/19/nft-natural-feature-tracking-con-jsartoolkit5/'
+  name: 'blog/2020/05/06/jsartoolkitnft-light-jsartoolkit5-per-nft/'
 - id: 25
   name: 'blog/2020/02/04/arstudio-nuovo-strumento-realtà-aumentata-open-source/'
 - id: 26
@@ -60,3 +60,5 @@
   name: 'blog/2020/05/06/jsartoolkitnft-light-jsartoolkit5-per-nft/'
 - id: 30
   name: 'blog/2020/07/09/nuovo-sito-rifugiokugy.com/'
+- id: 31
+  name: 'blog/2022/11/16/webarkit-sviluppo/'
