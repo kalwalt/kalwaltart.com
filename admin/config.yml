@@ -54,7 +54,7 @@ collections: # A list of collections the CMS should be able to edit
             widget: "select"
             options:
               - { label: "Walter Perdan", value: "Walter Perdan" }
-          - {label: "Date_Published", name: "datePublished", widget: "date"}
+          - {label: "Date_Published", name: "datePublished", widget: "datetime"}
       - {label: "Image_path", name: "image", widget: "string"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
