@@ -27,7 +27,7 @@ It has been quite a while since my last update here (November 2022). While the b
 
 Over the past few years, I have focused on rewriting the foundations of my tools to ensure safety and superior performance within the browser. Two projects, in particular, represent the core of this effort:
 
-1. [WebARKitLib-rs](https://www.google.com/search?q=https://github.com/webarkit/WebARKitLib-rs): A full Rust port of the classic ARToolkit engine. By leveraging WASM and SIMD instructions, I have optimized marker tracking to achieve significantly higher performance compared to previous versions.
+1. [WebARKitLib-rs](https://github.com/webarkit/WebARKitLib-rs): A full Rust port of the classic ARToolkit engine. By leveraging WASM and SIMD instructions, I have optimized marker tracking to achieve significantly higher performance compared to previous versions.
 2. [purecv](https://www.google.com/search?q=https://github.com/kalwalt/purecv): A Computer Vision library written entirely in Rust. Focused on *core* and *imgproc* modules, it is designed to be lightweight, modular, and performant.
 
 The Future: An Integrated Ecosystem
