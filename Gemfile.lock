@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
+    base64 (0.3.0)
     colorator (1.1.0)
     concurrent-ruby (1.3.6)
     csv (3.3.5)
@@ -79,6 +80,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  base64
   jekyll (~> 3.8)
   jekyll-amp-pwa-plugin (~> 5.1, >= 5.1.6)
   jekyll-compose
