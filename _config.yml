@@ -126,7 +126,6 @@ exclude:
   - netlify.toml
   - feed.xml
   - Gemfile
-  - Gemfile.lock
   - node_modules
   - vendor/bundle/
   - vendor/cache/
