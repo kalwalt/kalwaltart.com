@@ -2,17 +2,11 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html ⚡ lang="en">
+<html lang="en">
    {% include head.html %}
 		<body>
 			{% include header.html %}
-			<amp-user-notification id="my-notification"
-  layout="nodisplay">
-  <div>This site use cookies. Click the button to continue.
-    <button on="tap:my-notification.dismiss"
-      class="ampstart-btn caps ml1">I accept</button>
-  </div>
-</amp-user-notification>
+			<kw-cookie-banner></kw-cookie-banner>
 
 			{{ content }}
       {% include analytics.html %}
