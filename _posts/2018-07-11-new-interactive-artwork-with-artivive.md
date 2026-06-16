@@ -46,7 +46,9 @@ taken directly by Artivive. In fact in your smartphone (Android or Ios), when yo
 My future development with Artivive, it will almost certainly involve the new 3D video feature.
 But this is another story to tell in a future article on this blog... See you soon!
 
-<amp-youtube data-videoid="ckKJDEf58qA" layout="responsive" width="560" height="315"></amp-youtube>
+<div class="w-full aspect-video">
+  <iframe class="w-full h-full" src="https://www.youtube.com/embed/ckKJDEf58qA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Useful links:
 

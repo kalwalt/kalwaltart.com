@@ -1,6 +1,12 @@
 <!-- code injected before the end of the body tag -->
-<amp-install-serviceworker
-  src = "{{ site.url }}/service-worker.js"
-  layout = "nodisplay"
-  data-iframe-src="{{ site.url }}/install-service-worker.html">
-</amp-install-serviceworker>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('{{ site.url }}/service-worker.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>

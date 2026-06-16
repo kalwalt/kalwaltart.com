@@ -2,28 +2,23 @@
   <div class="middle">
     <a href="/interactivity"><div class="text fas fa-hand-pointer"> Discover my Interactive Artworks</div></a>
   </div>
-<amp-animation id="parallaxTransition"
-  layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1",
-      "fill": "both",
-      "direction": "reverse",
-      "animations": [{
-        "selector": "#parallaxImage",
-        "keyframes": [{
-          "transform": "translateY(-30%)"
-        }]
-      }]
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('parallaxImage');
+    if (el) {
+      const parent = el.closest('.container-parallax');
+      if (parent) {
+        const rect = parent.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const scrollFraction = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+          const translateY = -30 * Math.max(0, Math.min(1, scrollFraction));
+          el.style.transform = `translateY(${translateY}%)`;
+        }
+      }
     }
-  </script>
-</amp-animation>
+  });
+</script>
 <div class="parallax-image-window">
-
-  <amp-position-observer on="scroll:parallaxTransition.seekTo(percent=event.percent)"
-    intersection-ratios="0"
-    layout="nodisplay">
-  </amp-position-observer>
   {% assign width = "1200" %}
   {% assign height = "822" %}
   {% assign jpg_id = "8a696528-1f55-4ff4-a145-b92b88b497fb" %}
