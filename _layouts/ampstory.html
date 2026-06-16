@@ -1,24 +1,17 @@
 <!doctype html>
-<html ⚡>
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-    <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <style amp-custom>
-      amp-story {
+    <link rel="stylesheet" href="/assets/dist/main.css">
+    <script type="module" src="/assets/dist/main.js"></script>
+    <style>
+      kw-slideshow {
         font-family: 'Raleway',sans-serif;
         color: #fff;
       }
-      amp-story-page {
+      kw-slideshow-slide {
         background-color: #000;
       }
 
@@ -57,13 +50,13 @@
         font-weight: 300;
         font-size: 1.1em;
       }
-      amp-story-grid-layer.bottom {
+      .story-grid-layer.bottom {
         align-content:end;
       }
-      amp-story-grid-layer.noedge {
+      .story-grid-layer.noedge {
         padding: 0px;
       }
-      amp-story-grid-layer.center-text {
+      .story-grid-layer.center-text {
         align-content: center;
       }
       .wrapper {
@@ -76,13 +69,12 @@
         background-color: #000;
         line-height: 2em;
       }
-      amp-story-cta-layer{
+      .story-cta-layer{
         text-align:center;
         width:100%;
         font-size:1.3em;
-
       }
-      amp-story-cta-layer a{
+      .story-cta-layer a{
         text-decoration:none;
         padding-top:10%;
         padding-bottom:10%;
@@ -92,7 +84,7 @@
         width:100%;
         font-weight:700;
       }
-      amp-story-cta-layer a:after{
+      .story-cta-layer a:after{
         content:" ↪️";
       }
       .date{
@@ -104,127 +96,102 @@
 
       .verticalimg{
         position: relative;
-      width: calc(100% + 64px);
-      height: 400px;
-      margin-left: -32px;
-      }
-
-      .verticalimg img{
-        object-fit:contain;
+        width: calc(100% + 64px);
+        height: 400px;
+        margin-left: -32px;
+        object-fit: contain;
       }
 
       .blurimage{
         filter:blur(2px) brightness(90%);
       }
-
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,300,800" rel="stylesheet" type="text/css">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     {% seo %}
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="{{page.cover.title}}"
-        publisher="{{ site.url }}"
-        publisher-logo-src="{{site.logo}}"
-        poster-portrait-src="/images/amp-poster.png">
-      <amp-story-page id="cover">
-          {% if page.cover.background %}
-        <amp-story-grid-layer template="fill">
-          <amp-img src="{{page.cover.background}}"
+    <kw-slideshow>
+      <kw-slideshow-slide id="cover">
+        {% if page.cover.background %}
+        <div class="story-grid-layer template-fill">
+          <img src="{{page.cover.background}}"
               width="720" height="1280"
-              layout="responsive"
-              {% if page.cover.backgroundblur %}class="blurimage"{% endif %}>
-          </amp-img>
-        </amp-story-grid-layer>
+              {% if page.cover.backgroundblur %}class="blurimage"{% endif %}
+              loading="lazy" />
+        </div>
         {% endif %}
-        <amp-story-grid-layer template="vertical">
+        <div class="story-grid-layer template-vertical">
             <div class="content"><h1>{{page.cover.title}}</h1></div>
             <div class="content">{{page.cover.subtitle}}</div>
             <div class="content date">{{ page.date | date: "%B %-d, %Y" }}</div>
-        </amp-story-grid-layer>
-      </amp-story-page>
+        </div>
+      </kw-slideshow-slide>
 
-{% for page in page.pages %}
+      {% for page in page.pages %}
+      <kw-slideshow-slide id="page{{forloop.index}}">
+        {% if page.background %}
+        <div class="story-grid-layer template-fill">
+          <img srcset="{{page.background.src}} 720w, {{page.background_m}} 346w" src="{{page.background.src}}"
+              width="720" height="1280" alt="{{page.background.alt}}"
+              {% if page.backgroundblur %}class="blurimage"{% endif %}
+              loading="lazy" />
+        </div>
+        {% endif %}
 
-<amp-story-page id="page{{forloop.index}}">
-
-{% if page.background %}
-  <amp-story-grid-layer template="fill">
-    <amp-img srcset="{{page.background.src}} 720w, {{page.background_m}} 346w" src="{{page.background.src}}"
-        width="720" height="1280" alt="{{page.background.alt}}"
-        layout="responsive" {% if page.backgroundblur %}class="blurimage"{% endif %}>
-    </amp-img>
-  </amp-story-grid-layer>
-{% endif %}
-
-{% if page.video %}
-  <amp-story-grid-layer template="fill">
-          <amp-video autoplay loop
+        {% if page.video %}
+        <div class="story-grid-layer template-fill">
+          <video autoplay loop muted playsinline
                 width="720" height="1280"
-                poster="{{page.background.src}}"
-                layout="responsive">
+                poster="{{page.background.src}}">
               <source src="{{page.video}}" type="video/mp4">
-          </amp-video>
-  </amp-story-grid-layer>
-{% endif %}
+          </video>
+        </div>
+        {% endif %}
 
-{% if page.youtube %}
-  <amp-story-grid-layer template="fill">
-          <amp-youtube autoplay
+        {% if page.youtube %}
+        <div class="story-grid-layer template-fill">
+          <iframe src="https://www.youtube.com/embed/{{ page.youtube }}?autoplay=1&mute=1&loop=1&playlist={{ page.youtube }}"
                 width="720" height="1280"
-                data-videoid="{{page.youtube}}"
-                layout="responsive"
-                ></amp-youtube>
-  </amp-story-grid-layer>
-{% endif %}
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                class="w-full h-full border-none"></iframe>
+        </div>
+        {% endif %}
 
-{% if page.layout == "vertical" %}
+        {% if page.layout == "vertical" %}
+        <div class="story-grid-layer template-vertical" {% if page.textcolor %}style="color:{{page.textcolor}}"{%endif%}>
+          <div class="content">{{page.top}}</div>
+          {% if page.image %}
+          <img class="verticalimg" src="{{page.image}}" height="400px" width="400px" loading="lazy" />
+          {% endif %}
+          <div class="content">{{page.bottom}}</div>
+        </div>
 
-  <amp-story-grid-layer template="vertical" {% if page.textcolor %}style="color:{{page.textcolor}}"{%endif%}>
-    <div class="content">{{page.top}}</div>
-    {% if page.image %}
-    <amp-img class="verticalimg" src="{{page.image}}"
-        layout="responsive" height="400px" width="400px">
-    </amp-img>
-    {% endif %}
-    <div class="content">{{page.bottom}}</div>
-  </amp-story-grid-layer>
+        {% elsif page.layout =="thirds" %}
+        <div class="story-grid-layer template-thirds center" {% if page.textcolor %}style="color:{{page.textcolor}}"{%endif%}>
+          {% if page.top %}
+          <div grid-area="upper-third">{{page.top}}</div>
+          {% endif %}
+          {% if page.middle %}
+          <div grid-area="middle-third">{{page.middle}}</div>
+          {% endif %}
+          {% if page.bottom %}
+          <div grid-area="lower-third">{{page.bottom}}</div>
+          {% endif %}
+        </div>
+        {% endif %}
 
+        {% if page.cta %}
+        <div class="story-cta-layer">
+          <a href="{{page.cta.link}}" class="button">{{page.cta.text}}</a>
+        </div>
+        {% endif %}
+      </kw-slideshow-slide>
+      {% endfor %}
 
-{% elsif page.layout =="thirds" %}
-
-<amp-story-grid-layer template="thirds" class="center" {% if page.textcolor %}style="color:{{page.textcolor}}"{%endif%}>
-  {% if page.top %}
-  <div grid-area="upper-third">{{page.top}}</div>
-  {% endif %}
-  {% if page.middle %}
-  <div grid-area="middle-third">{{page.middle}}</div>
-  {% endif %}
-  {% if page.bottom %}
-  <div grid-area="lower-third">{{page.bottom}}</div>
-  {% endif %}
-</amp-story-grid-layer>
-
-
-{% endif %}
-
-{% if page.cta %}
-<amp-story-cta-layer>
-  <a href="{{page.cta.link}}" class="button">{{page.cta.text}}</a>
-</amp-story-cta-layer>
-{% endif %}
-
-</amp-story-page>
-
-{% endfor %}
-
-  {% include analytics.html %}
-
-      <!-- Bookend -->
-      <amp-story-bookend src="/assets/bookend/bookend.json" layout="nodisplay"></amp-story-bookend>
-    </amp-story>
+      {% include analytics.html %}
+    </kw-slideshow>
   </body>
 </html>
