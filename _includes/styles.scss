@@ -20,7 +20,7 @@ $link-color: rgb(0,114,154);
     }
 }
 
-amp-img {
+kw-img {
   background-color: grey;
 }
 
@@ -349,7 +349,7 @@ body {
       color: #333333;
       text-decoration: underline;
     }
-    img, picture, iframe, amp-img, amp-youtube {
+    img, picture, iframe, kw-img, kw-youtube {
       margin-top: 30px;
     }
     figure {
@@ -614,7 +614,7 @@ pre {
 
 }
 
-amp-user-notification > div {
+kw-cookie-banner > div {
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -742,7 +742,7 @@ html[data-current="contact"] main > form {
   }
 }
 
-.figure-amp-img{
+.figure-kw-img{
   margin: 0;
   padding: 0 0 30px;
 }
@@ -1003,7 +1003,7 @@ html[data-current="contact"] main > form {
   overflow: hidden;
 }
 
-.parallax-image-window img, .parallax-image-window picture, .parallax-image-window amp-img {
+.parallax-image-window img, .parallax-image-window picture, .parallax-image-window kw-img {
   margin-bottom: -30%;
   transition: .5s ease;
   backface-visibility: hidden;
