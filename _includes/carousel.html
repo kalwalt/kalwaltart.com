@@ -1,19 +1,14 @@
 <div>
- <amp-carousel class="carousel2"
-  width="720"
-  height="472"
-  layout="responsive"
-  type="slides"
-  controls>
+ <kw-carousel class="carousel2">
     {% for slide in site.data.interactivity %}
     <div class="slide">
-      <amp-img   width="720"
-        height="376" layout="responsive"
-        src="https://ucarecdn.com/{{ slide.up_id }}/{{ slide.name }}.jpg"
-        alt="{{ slide.alt }}"
-        ></amp-img>
+      <img src="https://ucarecdn.com/{{ slide.up_id }}/{{ slide.name }}.jpg"
+           alt="{{ slide.alt }}"
+           width="720"
+           height="376"
+           loading="lazy" />
       <div class="caption">{{ slide.caption }}</div>
     </div>
     {% endfor %}
- </amp-carousel>
+ </kw-carousel>
 </div>
