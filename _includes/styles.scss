@@ -1,4 +1,3 @@
-@import 'bourbon/bourbon';
 @import 'syntax-highlighting';
 
 $grey-color:       #828282;
@@ -26,7 +25,11 @@ amp-img {
 }
 
 .cf {
-  @include clearfix;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 $rs: 16px;
@@ -73,7 +76,7 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 16px auto 0 auto;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   @include respond-to(800) {
     padding: 0 $rs * 1;
   }
@@ -105,7 +108,7 @@ body {
   margin: 0 auto;
   position: relative;
   padding: 0;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 
   .blog-title {
     margin-bottom: 8px;
@@ -131,7 +134,7 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 25px auto 0 auto;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   @include respond-to(800) {
     padding: 0 $rs * 1;
   }
@@ -422,7 +425,7 @@ body {
     .isLeft {
       float: left;
       width: 47%;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       @include respond-to(800) {
         width: 100%;
         padding-bottom: $rs * 2;
@@ -479,7 +482,7 @@ body {
     .isRight {
       float: right;
       width: 47%;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       @include respond-to(800) {
         width: 100%;
       }
@@ -563,7 +566,7 @@ code {
   font-size: x-small;
   //max-width: 700px;
   padding: 1px 5px;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   @include respond-to(800) {
     padding: 0 $rs * 1;
   }
@@ -627,7 +630,7 @@ amp-user-notification > div {
   width: 100%;
   max-width: 700px;
   margin: 25px auto 12px auto;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   @include respond-to(800) {
     padding: 0 $rs * 1;
   }
@@ -680,7 +683,34 @@ textarea {
 }
 
 button {
-	@include button($link-color, $text-color-negative);
+  background-color: rgb(0,114,154);
+  color: white;
+  border: 1px solid rgb(0,78,105);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 rgb(0,166,222);
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgb(0,49,66);
+  background-image: linear-gradient(to bottom, rgb(0,114,154), rgb(0,78,105));
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-image: linear-gradient(to bottom, rgb(0,103,139), rgb(0,68,91));
+    box-shadow: inset 0 1px 0 0 rgb(0,150,200);
+  }
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    border-color: rgb(0,78,105);
+    box-shadow: inset 0 0 8px 4px rgb(0,55,75);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 // contact form

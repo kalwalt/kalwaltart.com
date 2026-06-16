@@ -11,6 +11,7 @@
   "author": "Walter Perdan",
   "license": "MIT",
   "dependencies": {
+    "braces": "^3.0.3",
     "lit": "^3.1.2"
   },
   "devDependencies": {
