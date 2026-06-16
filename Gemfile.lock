@@ -33,7 +33,6 @@ GEM
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
       webrick (>= 1.0)
-    jekyll-amp-pwa-plugin (5.1.6)
     jekyll-compose (0.12.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate-v2 (3.0.0)
@@ -86,7 +85,6 @@ DEPENDENCIES
   base64
   bigdecimal
   jekyll (~> 3.8)
-  jekyll-amp-pwa-plugin (~> 5.1, >= 5.1.6)
   jekyll-compose
   jekyll-paginate-v2
   jekyll-seo-tag

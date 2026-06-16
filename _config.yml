@@ -75,7 +75,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate-v2
-  - jekyll-amp-pwa-plugin
 
 # jekyll-tagging variables
 tag_page_layout: tag_page
@@ -84,20 +83,6 @@ tag_page_data:
   sitemap: false
 tag_permalink_style: pretty
 
-pwa:
-  dest_js_directory: assets/js
-  cache_name: pwa-cache
-  precache_recent_posts_num: 12
-  precache_glob_directory: /
-  precache_glob_patterns:
-    - "{js,css,fonts}/**/*.{js,css,woff,woff2,json}"
-    - /assets/icons/*.png
-    - /index.html
-    - /offline.html
-    - /about.html
-  precache_glob_ignores:
-    - sw-register.js
-  strategy: cacheFirst
 
 twitter:
   username: kalwalt
@@ -127,6 +112,8 @@ exclude:
   - feed.xml
   - Gemfile
   - node_modules
+  - src/
+  - package-lock.json
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
