@@ -6,3 +6,4 @@ import './components/kw-cookie-banner.js';
 import './components/kw-carousel.js';
 import './components/kw-slideshow.js';
 import './components/kw-slideshow-slide.js';
+import './components/kw-accordion.js';

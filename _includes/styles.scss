@@ -349,7 +349,7 @@ body {
       color: #333333;
       text-decoration: underline;
     }
-    amp-img, amp-youtube {
+    img, picture, iframe, amp-img, amp-youtube {
       margin-top: 30px;
     }
     figure {
@@ -1003,7 +1003,7 @@ html[data-current="contact"] main > form {
   overflow: hidden;
 }
 
-.parallax-image-window amp-img {
+.parallax-image-window img, .parallax-image-window picture, .parallax-image-window amp-img {
   margin-bottom: -30%;
   transition: .5s ease;
   backface-visibility: hidden;

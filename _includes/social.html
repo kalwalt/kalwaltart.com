@@ -1,15 +1,9 @@
 <div class=social-tab>
-  <div class="">
-    <amp-social-share type="facebook" data-param-app_id="308652763062146">
-    </amp-social-share>
-    <amp-social-share type="twitter"></amp-social-share>
-    <amp-social-share type="pinterest"></amp-social-share>
-    <amp-social-share type="email"></amp-social-share>
-  </div>
-  <div class="fb-likes">
-    <amp-facebook-like width=90 height=20 layout="fixed" data-layout="button_count"
-     data-href="https://www.facebook.com/perdanwalter/">
-    </amp-facebook-like>
+  <div class="social-share-buttons" style="display: flex; justify-content: center; gap: 15px; margin: 15px 0;">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" rel="noopener" class="fab fa-facebook" style="font-size: 24px; color: #1877f2;" aria-label="Share on Facebook"></a>
+    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener" class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;" aria-label="Share on Twitter"></a>
+    <a href="https://pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&description={{ page.title | url_encode }}" target="_blank" rel="noopener" class="fab fa-pinterest" style="font-size: 24px; color: #bd081c;" aria-label="Share on Pinterest"></a>
+    <a href="mailto:?subject={{ page.title | url_encode }}&body={{ site.url }}{{ page.url }}" class="fas fa-envelope" style="font-size: 24px; color: #666;" aria-label="Share by Email"></a>
   </div>
   <div class="patreon-box">
     <h4>Support me! Become my sponsor!</h4>
