@@ -1,22 +1,24 @@
 <figure class="figure-amp-img">
   <h3>{{ include.title }}</h3>
   <a href="{{ include.link }}" rel="{{ include.rel }}" target="{{ include.target }}">
-  <amp-img width="{{ include.width }}px" height="{{ include.height }}px"
-             src="https://ucarecdn.com/{{ include.webp_id }}/{{ include.name }}.webp" alt="{{ include.alt }}" title="{{ include.title }}"
-             srcset="https://ucarecdn.com/{{ include.webp_id }}/-/resize/320x/{{ include.name }}.webp 320w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/450x/{{ include.name }}.webp 450w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/640x/{{ include.name }}.webp 640w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/750x/{{ include.name }}.webp 750w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/800x/{{ include.name }}.webp 800w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/900x/{{ include.name }}.webp 900w,
-             https://ucarecdn.com/{{ include.webp_id }}/-/resize/1000x/{{ include.name }}.webp 1000w,
-             https://ucarecdn.com/{{ include.webp_id }}/{{ include.name }}.webp 1200w," sizes="(min-width: 1200px) 720px, 90vw" layout="responsive">
-    <amp-img alt="{{ include.alt }}"
-       fallback
-       width="{{ include.width }}px"
-       height="{{ include.height }}px"
-       src="https://ucarecdn.com/{{ include.jpg_id }}/{{ include.name }}.jpg"></amp-img>
-  </amp-img>
+  <picture>
+    <source srcset="https://ucarecdn.com/{{ include.webp_id }}/-/resize/320x/{{ include.name }}.webp 320w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/450x/{{ include.name }}.webp 450w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/640x/{{ include.name }}.webp 640w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/750x/{{ include.name }}.webp 750w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/800x/{{ include.name }}.webp 800w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/900x/{{ include.name }}.webp 900w,
+                    https://ucarecdn.com/{{ include.webp_id }}/-/resize/1000x/{{ include.name }}.webp 1000w,
+                    https://ucarecdn.com/{{ include.webp_id }}/{{ include.name }}.webp 1200w"
+            sizes="(min-width: 1200px) 720px, 90vw"
+            type="image/webp">
+    <img src="https://ucarecdn.com/{{ include.jpg_id }}/{{ include.name }}.jpg"
+         alt="{{ include.alt }}"
+         title="{{ include.title }}"
+         width="{{ include.width }}"
+         height="{{ include.height }}"
+         loading="lazy" />
+  </picture>
   </a>
    <h4 class="{{ include.className }}"><figcaption class="image-responsive-caption">{{ include.caption }}</figcaption></h4>
    <small><a href="{{ include.attrlink }}">{{ include.attr }}</a></small>
