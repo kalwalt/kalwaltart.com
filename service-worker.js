@@ -1,61 +1,90 @@
-// service-worker.js
+/**
+ * service-worker.js
+ * Standard HTML5 native Service Worker for offline support and asset caching.
+ * purges all deprecated AMP-specific logic and external Workbox dependencies.
+ */
 
-// set names for both precache & runtime cache
-workbox.core.setCacheNameDetails({
-    prefix: 'my-blog',
-    suffix: 'v1.0',
-    precache: 'precache',
-    runtime: 'runtime-cache'
-});
+const CACHE_NAME = 'kalwaltart-cache-v2';
+const ASSETS_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/assets/dist/main.css',
+  '/assets/dist/main.js',
+  '/offline.html'
+];
 
-// let Service Worker take control of pages ASAP
-workbox.core.skipWaiting();
-workbox.core.clientsClaim();
-
-// let Workbox handle our precache list
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
-
+// Install Event - Pre-cache essential app shell assets
 self.addEventListener('install', event => {
-  const urls = [
-    'https://cdn.ampproject.org/v0.js',
-    'https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js',
-    'https://cdn.ampproject.org/shadow-v0.js',
-    'index.html',
-    '/'
-  ];
-  const cacheName = workbox.core.cacheNames.runtime;
-  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(urls)));
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(ASSETS_TO_CACHE))
+      .then(() => self.skipWaiting())
+  );
 });
 
-// use `NetworkFirst` strategy for `*.html`, like all my posts
-workbox.routing.registerRoute(/\.html$/, args => {
-  return workbox.strategies.NetworkFirst().handle(args).then(response => {
-    if (!response) {
-      return caches.match('offline.html');
-    }
-    return response;
-  });
+// Activate Event - Clean up old cache schemas
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
+  );
 });
 
-// use `NetworkFirst` strategy for css and js
-workbox.routing.registerRoute(
-    /\.(?:js|css)$/,
-    new workbox.strategies.NetworkFirst()
-);
+// Fetch Event - Handle network-first and stale-while-revalidate strategies
+self.addEventListener('fetch', event => {
+  // Only handle GET requests and local scope requests
+  if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
 
-// use `CacheFirst` strategy for images
-workbox.routing.registerRoute(
-    /assets\/(img|icons)/,
-    new workbox.strategies.CacheFirst()
-);
+  const requestUrl = new URL(event.request.url);
 
-// third party files with StaleWhileRevalidate
-workbox.routing.registerRoute(
-    /^https?:\/\/cdn.staticfile.org/,
-    new workbox.strategies.StaleWhileRevalidate()
-);
+  // Network-First strategy for HTML document requests
+  if (event.request.headers.get('accept')?.includes('text/html')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Cache a clone of the fresh page
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+          }
+          return response;
+        })
+        .catch(() => {
+          // Network failed, serve cached page or fallback to the offline page
+          return caches.match(event.request).then(cachedResponse => {
+            return cachedResponse || caches.match('/offline.html');
+          });
+        })
+    );
+    return;
+  }
 
-workbox.routing.registerRoute(
-    /(.*)cdn\.ampproject\.org(.*)/,
-    new workbox.strategies.StaleWhileRevalidate()
-);
+  // Stale-While-Revalidate strategy for static assets (CSS, JS, Images, Fonts)
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      const fetchPromise = fetch(event.request)
+        .then(response => {
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+          }
+          return response;
+        })
+        .catch(() => {
+          // Fallback silently if fetch fails in background
+        });
+
+      // Return cached version immediately if available, otherwise wait for the network request
+      return cachedResponse || fetchPromise;
+    })
+  );
+});
