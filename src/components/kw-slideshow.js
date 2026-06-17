@@ -160,17 +160,19 @@ export class KwSlideshow extends LitElement {
     }
   }
 
-  /**
-   * Capture initial touch start coordinates.
-   */
   _handleTouchStart(e) {
-    this._touchStartX = e.touches[0].clientX;
+    if (e.touches && e.touches.length > 0) {
+      this._touchStartX = e.touches[0].clientX;
+    }
   }
 
   /**
    * Evaluate touch gesture swipe thresholds upon lift.
    */
   _handleTouchEnd(e) {
+    if (!this._touchStartX || !e.changedTouches || e.changedTouches.length === 0) {
+      return;
+    }
     const touchEndX = e.changedTouches[0].clientX;
     const diffX = this._touchStartX - touchEndX;
 
@@ -179,6 +181,7 @@ export class KwSlideshow extends LitElement {
     } else if (diffX < -50) {
       this.prev(); // Right swipe
     }
+    this._touchStartX = 0;
   }
 
   render() {
