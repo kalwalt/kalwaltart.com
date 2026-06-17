@@ -47,7 +47,7 @@ My future development with Artivive, it will almost certainly involve the new 3D
 But this is another story to tell in a future article on this blog... See you soon!
 
 <div class="w-full aspect-video">
-  <iframe class="w-full h-full" src="https://www.youtube.com/embed/ckKJDEf58qA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/ckKJDEf58qA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Useful links:
