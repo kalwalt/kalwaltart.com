@@ -76,7 +76,7 @@ input[type=submit]:hover {
    padding: 20px;
 }
 
- kw-carousel.caption {
+ kw-carousel .caption {
  position:absolute;
  bottom:0;
  left:0;
