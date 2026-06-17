@@ -25,7 +25,7 @@ In this website you can find all my applications used for my interactive artwork
 ## Introduction to my artistic research
 
 <div class="w-full aspect-video">
-  <iframe class="w-full h-full" src="https://www.youtube.com/embed/moG_76T_Jv0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/moG_76T_Jv0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 I became to be really interested in interactive art when i graduated from the my first degree in painting at Academy of Fine Arts in Bologna. To be honest i was interested in computer science and informathics as i was a teenager, but during my first studies at Academy in fine arts i was interested to perceive the theme of ascension in the contemporary art. I explain this aspect in my official web page. As i said as i took my first degree i feel that i needed to find new possibilities and try new approach to art making. I started developing virtual worlds with game engines like OGRE but after i discovered augmented reality with ARToolkit and Openframeworks. This wasn't an easy path because they are based on C++ language. Even if Openframeworks has a lot of facilities it's not easy as Javascript and Html i think. So i discovered AR.js open source project and was my best decision. Developing with AR.js has a lot of advantages in terms of usability and cross code compatibilty. No worries about that kind of issue, simply your code will work on every operative system simply uploading an Html and some javascript files.

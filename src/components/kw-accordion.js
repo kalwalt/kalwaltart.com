@@ -5,10 +5,7 @@ import { LitElement, html } from 'lit';
  * It toggles the visibility of the content inside sections when their headers are clicked.
  */
 export class KwAccordion extends LitElement {
-  static properties = {
-    // Array of indices of expanded sections
-    expandedSections: { type: Array }
-  };
+  static properties = {};
 
   constructor() {
     super();
