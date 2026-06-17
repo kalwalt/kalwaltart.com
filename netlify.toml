@@ -1,3 +1,7 @@
+[build]
+  command = "npm run build && bundle exec jekyll build"
+  publish = "_site"
+
 [[headers]]
   for = "/*"
   [headers.values]
