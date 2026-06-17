@@ -11,8 +11,11 @@ export class KwCookieBanner extends LitElement {
 
   constructor() {
     super();
-    // Check if the user has already accepted cookie consent
-    this.visible = !localStorage.getItem('kw-cookie-consent');
+    try {
+      this.visible = !localStorage.getItem('kw-cookie-consent');
+    } catch (e) {
+      this.visible = true;
+    }
   }
 
   // Disable Shadow DOM to allow global Tailwind CSS utility classes to apply
@@ -25,7 +28,11 @@ export class KwCookieBanner extends LitElement {
    * Persists consent in localStorage and hides the banner.
    */
   accept() {
-    localStorage.setItem('kw-cookie-consent', 'accepted');
+    try {
+      localStorage.setItem('kw-cookie-consent', 'accepted');
+    } catch (e) {
+      console.warn('Failed to save cookie consent:', e);
+    }
     this.visible = false;
   }
 

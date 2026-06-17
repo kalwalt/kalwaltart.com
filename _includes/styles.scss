@@ -20,9 +20,7 @@ $link-color: rgb(0,114,154);
     }
 }
 
-kw-img {
-  background-color: grey;
-}
+
 
 .cf {
   &::after {
@@ -349,7 +347,7 @@ body {
       color: #333333;
       text-decoration: underline;
     }
-    img, picture, iframe, kw-img, kw-youtube {
+    img, picture, iframe {
       margin-top: 30px;
     }
     figure {
@@ -1003,7 +1001,7 @@ html[data-current="contact"] main > form {
   overflow: hidden;
 }
 
-.parallax-image-window img, .parallax-image-window picture, .parallax-image-window kw-img {
+.parallax-image-window img, .parallax-image-window picture {
   margin-bottom: -30%;
   transition: .5s ease;
   backface-visibility: hidden;

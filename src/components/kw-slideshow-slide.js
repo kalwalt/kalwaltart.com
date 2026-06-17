@@ -47,12 +47,6 @@ export class KwSlideshowSlide extends LitElement {
       padding: 0;
     }
 
-    ::slotted(.template-fill) * {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     ::slotted(.template-vertical) {
       z-index: 2;
       grid-template-columns: 1fr;
