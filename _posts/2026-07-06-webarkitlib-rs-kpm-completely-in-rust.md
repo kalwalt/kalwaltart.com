@@ -13,7 +13,7 @@ seo:
   type: BlogPosting
   author: Walter Perdan
   datePublished: 2026-07-06T18:20:00.000+02:00
-image: https://ucarecdn.com/2b7af397-7d35-499d-9fbf-8a1047e20b2c/-/preview/999x545/
+image: https://ucarecdn.com/9ad1c018-0c32-423c-8fee-5b4c48a5f3d9/WebARKitLibrsKPMnoFFiRustfig.jpg
 intro_paragraph: The WebARKitLib-rs KPM module is now in Rust. Thanks to the
   Strangler Fig strategy and AI, I have ensured functional parity with the
   native code.
@@ -22,7 +22,7 @@ tags: webar, webarkit, rust, webarkitlib-rs purecv, 2026
 ---
 ## The Strategy: Strangler Fig
 
-![Webarkitlib-rs KPM completely in Rust](https://ucarecdn.com/2b7af397-7d35-499d-9fbf-8a1047e20b2c/-/preview/999x545/ "Webarkitlib-rs KPM completely in Rust")
+![Webarkitlib-rs KPM completely in Rust](https://ucarecdn.com/9ad1c018-0c32-423c-8fee-5b4c48a5f3d9/WebARKitLibrsKPMnoFFiRustfig.jpg "Webarkitlib-rs KPM completely in Rust")
 
 The **KPM** (Key Point Matching) module of the [WebARKitLib-rs](https://github.com/webarkit/WebARKitLib-rs) project, which previously relied on FFI to interact with C/C++ code, has now been entirely converted to Rust. To achieve this, I adopted the "Strangler Fig" strategy: I broke the module down into sub-modules, isolating critical functions. For each of these, I prepared parity tests that compare the Rust implementation with the corresponding native C/C++ one, ensuring absolute precision of the porting. Here is a practical example:
 
