@@ -16,24 +16,24 @@ seo:
 image: https://raw.githubusercontent.com/webarkit/purecv/main/assets/purecv_banner.png
 intro_paragraph: The WebARKitLib-rs KPM module is now in Rust. Thanks to the
   Strangler Fig strategy and AI, I have ensured functional parity with the
-  native code
+  native code.
 categories: programming open-source webar
-tags: webar, webarkit, rust, webarkitlib-rs purecv
+tags: webar, webarkit, rust, webarkitlib-rs purecv, 2026
 ---
 ## The Strategy: Strangler Fig
 
 The **KPM** (Key Point Matching) module of the [WebARKitLib-rs](https://github.com/webarkit/WebARKitLib-rs) project, which previously relied on FFI to interact with C/C++ code, has now been entirely converted to Rust. To achieve this, I adopted the "Strangler Fig" strategy: I broke the module down into sub-modules, isolating critical functions. For each of these, I prepared parity tests that compare the Rust implementation with the corresponding native C/C++ one, ensuring absolute precision of the porting. Here is a practical example:
 
 ```rust
-/// From crates/core/src/kpm/freak/homography.rs#L3028`
+/// From crates/core/src/kpm/freak/homography.rs#L3028
 /// Same as above but compares the full `RobustHomography::find()` 
 /// pipeline (RANSAC + IRLS polish) against the C++ baseline. 
-#\[test] 
+#[test] 
 fn robust_homography_find_matches_cpp() { 
     let mut rng = StdRng::seed_from_u64(0xF00DBABE); 
     let mut max_diff = 0.0_f32; 
     for trial in 0..5 { 
-        let h_true = \[ 
+        let h_true = [ 
             1.0 + rng.random_range(-0.1_f32..0.1), 
             rng.random_range(-0.1_f32..0.1), 
             rng.random_range(-1.0_f32..1.0), 
@@ -45,24 +45,24 @@ fn robust_homography_find_matches_cpp() {
             1.0, 
         ]; 
         let n: usize = 16; 
-        let mut p = vec!\[0.0_f32; n \* 2]; 
-        let mut q = vec!\[0.0_f32; n \* 2]; 
+        let mut p = vec![0.0_f32; n * 2]; 
+        let mut q = vec![0.0_f32; n * 2]; 
         for i in 0..n { 
-            p\[i \* 2] = rng.random_range(-5.0_f32..5.0); 
-            p\[i \* 2 + 1] = rng.random_range(-5.0_f32..5.0); 
-            let mut q_pt = \[0.0_f32; 2]; 
+            p[i * 2] = rng.random_range(-5.0_f32..5.0); 
+            p[i * 2 + 1] = rng.random_range(-5.0_f32..5.0); 
+            let mut q_pt = [0.0_f32; 2]; 
             multiply_point_homography_inhomogenous( 
                 &mut q_pt, 
                 &h_true, 
-                &\[p[i \* 2], p\[i \* 2 + 1]], 
+                &[p[i * 2], p[i * 2 + 1]], 
             ); 
-            q\[i \* 2] = q_pt\[0]; 
-            q\[i \* 2 + 1] = q_pt\[1]; 
+            q[i * 2] = q_pt[0]; 
+            q[i * 2 + 1] = q_pt[1]; 
         } 
         let estimator = RobustHomography::default(); 
-        let mut h_rust = \[0.0_f32; 9]; 
+        let mut h_rust = [0.0_f32; 9]; 
         let r = estimator.find(&mut h_rust, &p, &q, n); 
-        let mut h_cpp = \[0.0_f32; 9]; 
+        let mut h_cpp = [0.0_f32; 9]; 
         let c = unsafe { 
             webarkit_cpp_robust_homography_find( 
                 h_cpp.as_mut_ptr(), 
@@ -78,14 +78,14 @@ fn robust_homography_find_matches_cpp() {
         assert_eq!(r, c, "trial {}: Rust and C++ disagreed on success", trial); 
         if r { 
             for i in 0..9 { 
-                let diff = (h_rust\[i] - h_cpp\[i]).abs(); 
+                let diff = (h_rust[i] - h_cpp[i]).abs(); 
                 if diff > max_diff { 
                     max_diff = diff; 
                 } 
                 assert!( 
                     diff < 1e-5, 
-                    "trial {}: RobustHomography::find diverged at H\[{}]: rust={}, cpp={}, diff={}", 
-                    trial, i, h_rust\[i], h_cpp\[i], diff 
+                    "trial {}: RobustHomography::find diverged at H[{}]: rust={}, cpp={}, diff={}", 
+                    trial, i, h_rust[i], h_cpp[i], diff 
                 ); 
             } 
         } 
